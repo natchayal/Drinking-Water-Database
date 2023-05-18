@@ -1,7 +1,7 @@
 ---
 # title: "Predictors of arsenic content in California's groundwater"
-# Description: "Perform statistical analysis on Arsenic data for Dr. Lu CGN 6311 Intro to Data Science Project."
-# author: "Natchaya Luangphairin, Shelby Rocha, Mark Vicciardo"
+# Description: "Perform statistical analysis on Arsenic data."
+# author: "Natchaya Luangphairin"
 # date last revised: "2/27/2023"
 # output: R Script
 ---
