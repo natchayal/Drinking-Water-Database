@@ -14,7 +14,7 @@ While this represents a number of useful sites, it's certainly not exhaustive.
 | --------------- | ------------------------------------------------------------ | :------------: | :----------: | -------------------------------------------------------- |
 | EPA             | [Safe Drinking Water Information System (SDWIS)](https://www.epa.gov/enviro/web-services) |       💧💧💧💧       |     💧💧💧      | Limited Data, easy to scrape with R. <br />Can get violation data, treatment, water system, and purchaser-seller info.                              |                              |
 | EPA             | [Enforcement & Compliance History Online(ECHO)](https://echo.epa.gov/) |      💧💧💧💧      |    💧💧💧💧💧     | Good, but so much data it's hard to know what's what     |
-| EPA             | [USEPA Six Year Review](https://www.epa.gov/dwsixyearreview/six-year-review-3-compliance-monitoring-data-2006-2011)) |       💧💧💧💧       |     💧💧💧💧      | Data rich, easy to scrape. <br />Reports National occurence for each contaminant (not just the violations).  |
+| EPA             | [USEPA Six Year Review](https://www.epa.gov/dwsixyearreview) |       💧💧💧💧       |     💧💧💧💧      | Data rich, easy to scrape. <br />Reports National occurence for each contaminant (not just the violations).  |
 | USGS/EPA        | [Water Quality Portal](https://www.waterqualitydata.us/)     |     💧💧💧💧💧      |    💧💧💧💧💧     | Well organized & <br />comprehensive data                |
 | EPA | [Unregulated Contaminant Monitoring Rule (UCMR)](https://www.epa.gov/dwucmr) |     💧💧💧💧💧      |    💧💧     | Occurrence on unregulated contaminants. <br />Reports disinfection type and treatment info.    
 | EPA | [USEPA IRIS Information](https://www.epa.gov/iris) |     💧💧💧💧💧      |    💧💧     | Concentration on drinking (oral) route of exposure, not air. <br />Toxicology information, Maximum Contaminant Level (MCL) info.                        |
@@ -107,8 +107,7 @@ While this represents a number of useful sites, it's certainly not exhaustive.
 
 * Data: 
   * Each zip file below contains data for multiple contaminants and related information that can be unzipped into tab delimited text files: https://www.epa.gov/dwsixyearreview
-  * Data is located at the following link, and is broken down by contaminant: https://www.epa.gov/dwsixyearreview/six-year-review-3-compliance-monitoring-data-2006-2011
-
+  * Data is located at the following link, and is broken down by contaminant: example for SYR3 https://www.epa.gov/dwsixyearreview/six-year-review-3-compliance-monitoring-data-2006-2011
 * <u>Code examples</u>: 
 ```r
 nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
