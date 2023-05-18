@@ -21,7 +21,6 @@ While this represents a number of useful sites, it's certainly not exhaustive.
 
 
 ---
-# Archive of Drinking Water Database
 
 ## I. National Data Sources
 
