@@ -163,7 +163,8 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
 - <u>Summary</u>: Information can be combined with water quality data and mapped with GIS.
     - ECHO: https://echo.epa.gov/tools/data-downloads/demographic-download-summary for income and census data
     - UCB: https://data.census.gov/table to explore census tables which can be downloaded
-    - CDC: https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html for social vulneravility index (SVI) assessment
+    - CDC SVI: https://www.atsdr.cdc.gov/placeandhealth/svi/index.html for social vulneravility index (SVI) 
+    - CDC ENJI: https://www.atsdr.cdc.gov/placeandhealth/eji/index.html for environmental justice index (EJI)
     - USGS: https://www.usgs.gov/ provides geographical data and shapefiles
 
 - <u>Code examples</u>: None
