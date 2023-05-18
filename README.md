@@ -14,7 +14,7 @@ While this represents a number of useful sites, it's certainly not exhaustive.
 | --------------- | ------------------------------------------------------------ | :------------: | :----------: | -------------------------------------------------------- |
 | EPA             | [Safe Drinking Water Information System (SDWIS)](https://www.epa.gov/enviro/web-services) |       💧💧💧💧       |     💧💧💧      | Limited Data, easy to scrape with R. <br />Can get violation data, treatment, water system, and purchaser-seller info.                              |                              |
 | EPA             | [Enforcement & Compliance History Online(ECHO)](https://echo.epa.gov/) |      💧💧💧💧      |    💧💧💧💧💧     | Good, but so much data it's hard to know what's what     |
-| EPA             | [USEPA Six Year Review Data](https://www.epa.gov/dwsixyearreview/six-year-review-3-compliance-monitoring-data-2006-2011)) |       💧💧💧💧       |     💧💧💧💧      | Data rich, easy to scrape. <br />Reports National occurence for each contaminant (not just the violations).  |
+| EPA             | [USEPA Six Year Review](https://www.epa.gov/dwsixyearreview/six-year-review-3-compliance-monitoring-data-2006-2011)) |       💧💧💧💧       |     💧💧💧💧      | Data rich, easy to scrape. <br />Reports National occurence for each contaminant (not just the violations).  |
 | USGS/EPA        | [Water Quality Portal](https://www.waterqualitydata.us/)     |     💧💧💧💧💧      |    💧💧💧💧💧     | Well organized & <br />comprehensive data                |
 | EPA | [Unregulated Contaminant Monitoring Rule (UCMR)](https://www.epa.gov/dwucmr) |     💧💧💧💧💧      |    💧💧     | Occurrence on unregulated contaminants. <br />Reports disinfection type and treatment info.    
 | EPA | [USEPA IRIS Information](https://www.epa.gov/iris) |     💧💧💧💧💧      |    💧💧     | Concentration on drinking (oral) route of exposure, not air. <br />Toxicology information, Maximum Contaminant Level (MCL) info.                        |
@@ -94,7 +94,7 @@ While this represents a number of useful sites, it's certainly not exhaustive.
 - <u>Code examples</u>: None
 
 
-### C. USEPA Six Year Review Data
+### C. USEPA Six Year Review (SYR)
 
 - <u>**Overview**</u>: Data rich, easy to scrape, and contains occurence and contaminant level data (not just the violations!)
   - Updated every 6 years 
@@ -135,7 +135,7 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
 
 - **<u>Overview</u>**: Only place to get data on unregulated contaminants
   - The 1996 Safe Drinking Water Act (SDWA) amendments require that once every five years EPA issue a new list of no more than 30 unregulated contaminants to be monitored by public water systems (PWSs).
-  - Contains disinfectant type and treatment information
+  - Contains disinfectant type and treatment information useful info to match by PWSID and merge with data from SDWIS and SYR.
 
 - <u>Link</u>: https://www.epa.gov/dwucmr
 - <u>Summary</u>: EPA uses the Unregulated Contaminant Monitoring Rule (UCMR) to collect data for contaminants suspected to be present in drinking water, but that do not have regulatory standards set under the Safe Drinking Water Act (SDWA). The monitoring provides EPA and other interested parties with nationally representative data on the occurrence of contaminants in drinking water, the number of people potentially being exposed, and an estimate of the levels of that exposure. These data can support future regulatory determinations and other actions to protect public health.
