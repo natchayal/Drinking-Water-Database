@@ -4,7 +4,7 @@ Analyzing drinking water standards and regulations. This git repository contains
 The website for this project can be viewed here (*in progress*).
 
 ## 💧 Executive Summary 💧
-I spent a lot of time exploring various drinking water database available on the internet. I evaluated resources on the relevance of the data they provided as well as how easily the data could be accessed and downloaded, a summary of which is provided below. I also generated a number of R scripts, provided as interactive R markdown notebooks (.Rmd) files that demonstrate how some of these datasets are accessed and visualized. 
+I spent a lot of time exploring various drinking water database available on the internet including national, state-level, and local-level databases. I evaluated resources on the relevance of the data they provided as well as how easily the data could be accessed and downloaded, a summary of which is provided below. I also generated a number of R scripts, provided as interactive R markdown notebooks (.Rmd) files that demonstrate how some of these datasets are accessed and visualized. 
 
 While this represents a number of useful sites, it's certainly not exhaustive. 
 
