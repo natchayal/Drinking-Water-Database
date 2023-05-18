@@ -39,7 +39,6 @@ While this represents a number of useful sites, it's certainly not exhaustive.
 - <u>Data</u>:
 
   - Violation:
-
     - The data is available from here, in limited capacity: https://www.epa.gov/enviro/sdwis-search
       - Select data of interest and export report as a .csv file, use this link: https://ofmpub.epa.gov/apex/sfdw/f?p=108:1:0::NO:1
     
