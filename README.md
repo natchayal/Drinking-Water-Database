@@ -63,8 +63,9 @@ While this represents a number of useful sites, it's certainly not exhaustive.
 - **<u>Overview</u>**: ***Promising!***
   - Established data services capabilities with documented web services
   - Holds many datasets, though so much that it's somewhat confusing what it holds:
-    - Drinking Water: https://echo.epa.gov/help/facility-search/drinking-water-search-results-help#frsid
+    - Drinking Water: https://echo.epa.gov/help/facility-search/drinking-water-search-results-help
     - Water Facility: https://echo.epa.gov/tools/web-services/facility-search-water
+    - The EPA/State Drinking Water Dashboard: https://echo.epa.gov/trends/comparative-maps-dashboards/drinking-water-dashboard (quick view of violation trend)
 
 - <u>Link</u>: https://echo.epa.gov/
 - <u>Summary</u>: Provides compliance and enforcement information for over 900,000 regulated facilities nationwide. Allows query at state/county/city/zip level for a table of facilities and their compliance records. Not limited to water (NPDES and drinking water); includes air, hazardous waste,...
