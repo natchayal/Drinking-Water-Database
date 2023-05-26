@@ -142,11 +142,12 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
 - <u>Code examples</u>: None
 
 
-### G. Census Bureau
+### G. Other Useful Database
 - **<u>Overview</u>**: Good for Geographic & Demographic Information
 
 - <u>Summary</u>: Information can be combined with water quality data and mapped with GIS.
-    - ECHO: https://echo.epa.gov/tools/data-downloads/demographic-download-summary for income and census data
+    - ECHO Drinking Water Data Downloads: https://echo.epa.gov/tools/data-downloads/sdwa-download-summary contains PWS address information that can be geocoded using GIS
+    - ECHO Facility Demographic: https://echo.epa.gov/tools/data-downloads/demographic-download-summary for income and census data
     - UCB: https://data.census.gov/table to explore census tables which can be downloaded
     - CDC SVI: https://www.atsdr.cdc.gov/placeandhealth/svi/index.html for social vulneravility index (SVI) 
     - CDC ENJI: https://www.atsdr.cdc.gov/placeandhealth/eji/index.html for environmental justice index (EJI)
