@@ -12,13 +12,12 @@ While this represents a number of useful sites, it's certainly not exhaustive.
 
 | Source          | Dataset                                                      | Ease of Access | Data Utility | Comments                                                 |
 | --------------- | ------------------------------------------------------------ | :------------: | :----------: | -------------------------------------------------------- |
-| EPA             | [Safe Drinking Water Information System (SDWIS)](https://www.epa.gov/enviro/web-services) |       💧💧💧💧       |     💧💧💧      | Limited Data, easy to scrape with R. <br />Can get violation data, treatment, water system, and purchaser-seller info.                              |                              |
+| EPA             | [Safe Drinking Water Information System (SDWIS)](https://www.epa.gov/enviro/web-services) |       💧💧💧💧       |     💧💧💧      | Limited Data, easy to scrape with R. <br />Can get violation data, treatment, water system detail, and purchaser-seller info.                            |                              |
 | EPA             | [Enforcement & Compliance History Online(ECHO)](https://echo.epa.gov/) |      💧💧💧💧      |    💧💧💧💧💧     | Good, but so much data it's hard to know what's what     |
 | EPA             | [USEPA Six Year Review](https://www.epa.gov/dwsixyearreview) |       💧💧💧💧       |     💧💧💧💧      | Data rich, easy to scrape. <br />Reports National occurence for each contaminant (not just the violations).  |
 | USGS/EPA        | [Water Quality Portal](https://www.waterqualitydata.us/)     |     💧💧💧💧💧      |    💧💧💧💧💧     | Well organized & <br />comprehensive data                |
 | EPA | [Unregulated Contaminant Monitoring Rule (UCMR)](https://www.epa.gov/dwucmr) |     💧💧💧💧💧      |    💧💧     | Occurrence on unregulated contaminants. <br />Reports disinfection type, residual, and treatment info.    
 | EPA | [USEPA IRIS Information](https://www.epa.gov/iris) |     💧💧💧💧💧      |    💧💧     | Concentration on drinking (oral) route of exposure, not air. <br />Toxicology information, Maximum Contaminant Level (MCL) info.                        |
-
 
 
 ---
@@ -71,7 +70,8 @@ While this represents a number of useful sites, it's certainly not exhaustive.
 - <u>Summary</u>: Provides compliance and enforcement information for over 900,000 regulated facilities nationwide. Allows query at state/county/city/zip level for a table of facilities and their compliance records. Not limited to water (NPDES and drinking water); includes air, hazardous waste,...
 - <u>Data</u>:
   - Main pages searches by form. Not REST interface. CSV's generated with temporary link. 	
-  - Download data as ZIP file: https://echo.epa.gov/tools/data-downloads#downloads
+  - Download data as ZIP file: https://echo.epa.gov/tools/data-downloads 
+  - Ex. Drinking Water Data Downloads: https://echo.epa.gov/tools/data-downloads/sdwa-download-summary contains facility information from SDWIS database (includes: Events, Facility, Geograhic Area, Violations and Enforcement, and PWS address information that can be geocoded using GIS!)
   - <u>Web services</u> provided: https://echo.epa.gov/tools/web-services
     - Documentation is a bit obtuse, generates temporary result files (valid for 30 min)
 - <u>Code examples</u>: None
