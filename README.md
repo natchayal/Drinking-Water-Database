@@ -31,12 +31,12 @@ While this represents a number of useful sites, it's certainly not exhaustive.
   - Possibly redundant with ECHO. 
   - Queries must be done iteratively with R. Server is often down.
 
-- <u>Link</u>: https://www.epa.gov/enviro/topic-searches#water
+- <u>Link</u>: https://www.epa.gov/enviro/topic-searches#water 
 
 - <u>Summary</u>: Data on violations and enforcement history since 1993 of the EPA's drinking water regulations. 
 
 - <u>Data</u>:
-
+  
   - Violation:
     - The data is available from here, in limited capacity: https://www.epa.gov/enviro/sdwis-search
       - Select data of interest and export report as a .csv file, use this link: https://ofmpub.epa.gov/apex/sfdw/f?p=108:1:0::NO:1
@@ -56,8 +56,11 @@ While this represents a number of useful sites, it's certainly not exhaustive.
 	filename <- paste0("AllViolationData_EPA_EnvirofactsAPI_", format(Sys.Date(), "%m%d%y"), ".csv")
 	write.csv(DataMerged, file = filename, row.names=FALSE)
 ```
+  - Treatment:
+  	- For treatment information, this link: https://enviro.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=TREATMENT&p_topic=SDWIS
 
-
+  - For other Envirofacts Data Service API https://www.epa.gov/enviro/sdwis-model#table_names
+    
 ### B. EPA Enforcement and Compliance History Online (ECHO)
 
 - **<u>Overview</u>**: ***Promising!***
@@ -123,7 +126,7 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
 - <u>Link</u>: https://www.epa.gov/dwucmr
 - <u>Summary</u>: EPA uses the Unregulated Contaminant Monitoring Rule (UCMR) to collect data for contaminants suspected to be present in drinking water, but that do not have regulatory standards set under the Safe Drinking Water Act (SDWA). The monitoring provides EPA and other interested parties with nationally representative data on the occurrence of contaminants in drinking water, the number of people potentially being exposed, and an estimate of the levels of that exposure. These data can support future regulatory determinations and other actions to protect public health.
 - <u>Data</u>:
-    - Occurence: https://www.epa.gov/dwucmr/occurrence-data-unregulated-contaminant-monitoring-rule#dsum
+    - Occurence: https://www.epa.gov/dwucmr/occurrence-data-unregulated-contaminant-monitoring-rule
    
 - <u>Code examples</u>: None
 
@@ -152,8 +155,26 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
     - CDC SVI: https://www.atsdr.cdc.gov/placeandhealth/svi/index.html for social vulneravility index (SVI) 
     - CDC ENJI: https://www.atsdr.cdc.gov/placeandhealth/eji/index.html for environmental justice index (EJI)
     - USGS: https://www.usgs.gov/ provides geographical data and shapefiles
+    - Can also geocode by address <u>Code examples</u>: 
+```r
+# install the necessary libraries
+library(dplyr, warn.conflicts = FALSE)
+library(tidygeocoder)
 
-- <u>Code examples</u>: None
+# create a dataframe with addresses
+some_addresses <- tibble::tribble(
+  ~name,                  ~addr,
+  "White House",          "1600 Pennsylvania Ave NW, Washington, DC",
+  "Transamerica Pyramid", "600 Montgomery St, San Francisco, CA 94111",     
+  "Willis Tower",         "233 S Wacker Dr, Chicago, IL 60606"                                  
+)
+
+# geocode the addresses
+lat_longs <- some_addresses %>% 
+  geocode(addr, method = 'osm', lat = latitude, long = longitude)
+```
+
+
 
 
 ---
