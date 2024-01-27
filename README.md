@@ -41,7 +41,7 @@ While this represents a number of useful sites, it's certainly not exhaustive.
     - The data is available from here, in limited capacity: https://www.epa.gov/enviro/sdwis-search
       - Select data of interest and export report as a .csv file, use this link: https://ofmpub.epa.gov/apex/sfdw/f?p=108:1:0::NO:1
     
-    - R script is based on the info contained here: https://www.epa.gov/enviro/web-services
+    - R script is based on the info contained here: https://www.epa.gov/enviro/web-services and https://www.epa.gov/enviro/envirofacts-data-service-api
       - Then need to scrape sub-tables..
       - If you need to define a code or other parameter in the table, this link contains all that information: https://enviro.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=VIOLATION&p_topic=SDWIS
 - <u>Code examples</u> : 
