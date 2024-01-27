@@ -39,6 +39,7 @@ While this represents a number of useful sites, it's certainly not exhaustive.
   
   - Violation:
     - The data is available from here, in limited capacity: https://www.epa.gov/enviro/sdwis-search
+      	* SDWIS Search by: 'Select a geographic area' or 'Enter the water system ID number'
       - Select data of interest and export report as a .csv file, use this link: https://ofmpub.epa.gov/apex/sfdw/f?p=108:1:0::NO:1
     
     - R script is based on the info contained here: https://www.epa.gov/enviro/web-services and https://www.epa.gov/enviro/envirofacts-data-service-api
