@@ -156,7 +156,7 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
     - CDC SVI: https://www.atsdr.cdc.gov/placeandhealth/svi/index.html for social vulneravility index (SVI) 
     - CDC ENJI: https://www.atsdr.cdc.gov/placeandhealth/eji/index.html for environmental justice index (EJI)
     - USGS: https://www.usgs.gov/ provides geographical data and shapefiles
-    - Can also geocode by address <u>Code examples</u>: 
+    - R script on how to geocode by address:
 ```r
 # install the necessary libraries
 library(dplyr, warn.conflicts = FALSE)
