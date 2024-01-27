@@ -153,7 +153,7 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
     - ECHO Drinking Water Data Downloads: https://echo.epa.gov/tools/data-downloads/sdwa-download-summary contains PWS address information that can be geocoded using GIS
     - ECHO Facility Demographic: https://echo.epa.gov/tools/data-downloads/demographic-download-summary for income and census data
     - UCB: https://data.census.gov/table to explore census tables which can be downloaded
-    - CDC SVI: https://www.atsdr.cdc.gov/placeandhealth/svi/index.html for social vulneravility index (SVI) 
+    - CDC SVI: https://www.atsdr.cdc.gov/placeandhealth/svi/index.html for social vulnerability index (SVI) 
     - CDC ENJI: https://www.atsdr.cdc.gov/placeandhealth/eji/index.html for environmental justice index (EJI)
     - USGS: https://www.usgs.gov/ provides geographical data and shapefiles
     - R script on how to geocode by address:
