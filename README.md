@@ -58,9 +58,9 @@ While this represents a number of useful sites, it's certainly not exhaustive.
 	write.csv(DataMerged, file = filename, row.names=FALSE)
 ```
   - Treatment:
-  	- For treatment information, this link: https://enviro.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=TREATMENT&p_topic=SDWIS
+    - For treatment information, this link: https://enviro.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=TREATMENT&p_topic=SDWIS
 
-  - For other Envirofacts Data Service API https://www.epa.gov/enviro/sdwis-model#table_names
+  - For other Envirofacts Data Service: API https://www.epa.gov/enviro/sdwis-model#table_names
     
 ### B. EPA Enforcement and Compliance History Online (ECHO)
 
