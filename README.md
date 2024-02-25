@@ -43,7 +43,7 @@ While this represents a number of useful sites, it's certainly not exhaustive.
       - Select data of interest and export report as a .csv file, use this link: https://ofmpub.epa.gov/apex/sfdw/f?p=108:1:0::NO:1
     
     - R script is based on the info contained here: https://www.epa.gov/enviro/web-services and https://www.epa.gov/enviro/envirofacts-data-service-api
-      - Then need to scrape sub-tables..
+      - Then need to scrape sub-tables.
       - If you need to define a code or other parameter in the table, this link contains all that information: https://enviro.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=VIOLATION&p_topic=SDWIS
 - <u>Code examples</u> : 
 ```r
@@ -60,7 +60,7 @@ While this represents a number of useful sites, it's certainly not exhaustive.
   - Treatment:
     - For treatment information, this link: https://enviro.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=TREATMENT&p_topic=SDWIS
 
-  - For other Envirofacts Data Service: API https://www.epa.gov/enviro/sdwis-model#table_names
+  - For other Envirofacts Data Service: API https://www.epa.gov/enviro/sdwis-model (How these files relate is described here)
     
 ### B. EPA Enforcement and Compliance History Online (ECHO)
 
@@ -181,6 +181,9 @@ lat_longs <- some_addresses %>%
 ---
 
 ## II. State Data Sources
+Analyze Trends: EPA/State Drinking Water Dashboard
+* <u>Link</u>: https://echo.epa.gov/trends/comparative-maps-dashboards/drinking-water-dashboard
+
 Alaska Drinking Water Watch
 * <u>Link</u>: https://dec.alaska.gov/DWW/
 
