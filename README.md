@@ -181,7 +181,28 @@ lat_longs <- some_addresses %>%
 ---
 
 ## II. State Data Sources
+Alaska Drinking Water Watch
+* <u>Link</u>: https://dec.alaska.gov/DWW/
 
+California Drinking Water Watch
+* <u>Link</u>: https://www.waterboards.ca.gov/resources/data_databases/
+* <u>Link</u>: https://sdwis.waterboards.ca.gov/PDWW/
+
+Louisiana Drinking Water Watch
+* <u>Link</u>: https://sdw.ldh.la.gov/DWW/
+
+Indiana Drinking Water Watch
+* <u>Link</u>: https://indwv.gecsws.com/
+
+New Jersey Drinking Water Watch
+* <u>Link</u>: https://www9.state.nj.us/DEP_WaterWatch_public/
+
+North Carolina Drinking Water Watch
+* <u>Link</u>: https://www.pwss.enr.state.nc.us/NCDWW2/
+
+Texas Drinking Water Watch
+* <u>Link</u>: https://www.tceq.texas.gov/agency/water_main.html
+* <u>Link</u>: https://dww2.tceq.texas.gov/DWW/
 
 
 
