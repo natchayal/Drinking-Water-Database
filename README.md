@@ -75,7 +75,7 @@ While this represents a number of useful sites, it's certainly not exhaustive.
 - <u>Summary</u>: Provides compliance and enforcement information for over 900,000 regulated facilities nationwide. Allows query at state/county/city/zip level for a table of facilities and their compliance records. Not limited to water (NPDES and drinking water); includes air, hazardous waste,...
 - <u>Data</u>:
   - Main pages searches by form. Not REST interface. CSV's generated with temporary link. 	
-  - Download data as ZIP file: https://echo.epa.gov/tools/data-downloads 
+  - Download utility meta data as ZIP file: https://echo.epa.gov/tools/data-downloads 
   - Ex. Drinking Water Data Downloads: https://echo.epa.gov/tools/data-downloads/sdwa-download-summary contains facility information from SDWIS database (includes: Events, Facility, Geograhic Area, Violations and Enforcement, and PWS address information that can be geocoded using GIS!)
   - <u>Web services</u> provided: https://echo.epa.gov/tools/web-services
     - Documentation is a bit obtuse, generates temporary result files (valid for 30 min)
@@ -229,4 +229,5 @@ Texas Drinking Water Watch
  	- **SR**: Source Water Point—defined in the Unregulated Contaminant Monitoring Rule as the location at which untreated water is collected at the source.
 	- **UP**: Unit Process—a sampling point used to evaluate the effectiveness of a unit process. This type might be used, for instance, to determine the contact time under the Surface Water Treatment Rule for a single unit process.
 	- **WS**: Water System Facility point. <br />
+ 
 (Source: <u>Link</u>: https://dec.alaska.gov/dww/Help/html_Type_of_Sampling_Point.htm)
