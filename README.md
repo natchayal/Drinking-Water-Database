@@ -39,8 +39,9 @@ While this represents a number of useful sites, it's certainly not exhaustive.
   
   - Violation:
     - The data is available from here, in limited capacity: https://www.epa.gov/enviro/sdwis-search
-      	* SDWIS Search by: 'Select a geographic area' or 'Enter the water system ID number'
+      	* SDWIS Search by: 'Select a geographic area' or 'Enter the water system ID number' (PWSID for tribal agencies will have region code instead of state code as prefix)
       - Select data of interest and export report as a .csv file, use this link: https://ofmpub.epa.gov/apex/sfdw/f?p=108:1:0::NO:1
+      - A full description of violation and contaminant codes can be accessed in the SDWA_REF_CODE_VALUES.csv of https://echo.epa.gov/files/echodownloads/SDWA_latest_downloads.zip
     
     - R script is based on the info contained here: https://www.epa.gov/enviro/web-services and https://www.epa.gov/enviro/envirofacts-data-service-api
       - Then need to scrape sub-tables.
