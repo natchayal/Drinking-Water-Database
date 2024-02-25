@@ -225,5 +225,5 @@ Texas Drinking Water Watch
 	- **RW**: Raw Water Source—locations normally associated with intake or well water system facilities. Raw water monitoring is triggered by the detection of a contaminant at an entry point to the distribution system. This Sampling Point type can also be used to designate the raw water sampling point for precursor removal.
  	- **SR**: Source Water Point—defined in the Unregulated Contaminant Monitoring Rule as the location at which untreated water is collected at the source.
 	- **UP**: Unit Process—a sampling point used to evaluate the effectiveness of a unit process. This type might be used, for instance, to determine the contact time under the Surface Water Treatment Rule for a single unit process.
-	- **WS**: Water System Facility point.
+	- **WS**: Water System Facility point. <br />
 (Source: <u>Link</u>: https://dec.alaska.gov/dww/Help/html_Type_of_Sampling_Point.htm)
