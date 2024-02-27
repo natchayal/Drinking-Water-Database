@@ -27,6 +27,7 @@ While this represents a number of useful sites, it's certainly not exhaustive.
 ### A. EPA Safe Drinking Water Information System (SWDIS)
 
 - **<u>Overview</u>**: Potential, but with obstacles; possibly redundant.
+  - Violation and enforcement data are reported quarterly
   - The data are obscurely layered across different servers.
   - Possibly redundant with ECHO. 
   - Queries must be done iteratively with R. Server is often down.
@@ -69,17 +70,19 @@ While this represents a number of useful sites, it's certainly not exhaustive.
   - Established data services capabilities with documented web services
   - Holds many datasets, though so much that it's somewhat confusing what it holds:
     - Drinking Water: https://echo.epa.gov/help/facility-search/drinking-water-search-results-help
-    - Water Facility: https://echo.epa.gov/tools/web-services/facility-search-water
+    - Water Facility: https://enviro.epa.gov/envirofacts/sdwis/search
     - The EPA/State Drinking Water Dashboard: https://echo.epa.gov/trends/comparative-maps-dashboards/drinking-water-dashboard (quick view of violation trend)
 
 - <u>Link</u>: https://echo.epa.gov/
 - <u>Summary</u>: Provides compliance and enforcement information for over 900,000 regulated facilities nationwide. Allows query at state/county/city/zip level for a table of facilities and their compliance records. Not limited to water (NPDES and drinking water); includes air, hazardous waste,...
 - <u>Data</u>:
   - Main pages searches by form. Not REST interface. CSV's generated with temporary link. 	
-  - Download utility meta data as ZIP file: https://echo.epa.gov/tools/data-downloads 
-  - Ex. Drinking Water Data Downloads: https://echo.epa.gov/tools/data-downloads/sdwa-download-summary contains facility information from SDWIS database (includes: Events, Facility, Geograhic Area, Violations and Enforcement, and PWS address information that can be geocoded using GIS!)
+  - Download utility meta data as ZIP file: https://echo.epa.gov/files/echodownloads/SDWA_latest_downloads.zip Containes files including spreadsheet with contaminant code and violation code references, for example:
+    -  Contaminant Code: Nitrate (1040), TCR (3100) and RTCR (8000), HAA5 (2456), TTHMs (2950);
+    -  Violation Code: Average (02) and Single Sample (01) Maximum Contaminant Level Violation; Monitoring, Regular (03) and Monitoring, Check/Repeat/Confirmation (04) Violation
+  - More info about ZIP file from Drinking Water Data Downloads: https://echo.epa.gov/tools/data-downloads/sdwa-download-summary contains facility information from SDWIS database (includes: Events, Facility, Geograhic Area, Violations and Enforcement, and PWS address information that can be geocoded using GIS!)
   - <u>Web services</u> provided: https://echo.epa.gov/tools/web-services
-    - Documentation is a bit obtuse, generates temporary result files (valid for 30 min)
+    - Documentation is a bit obtuse, generates temporary result files (valid for 30 min, Server often down due to Failed to load API definition.)
 - <u>Code examples</u>: None
 
 
@@ -123,6 +126,8 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
 
 - **<u>Overview</u>**: Only place to get data on unregulated contaminants
   - The 1996 Safe Drinking Water Act (SDWA) amendments require that once every five years EPA issue a new list of no more than 30 unregulated contaminants to be monitored by public water systems (PWSs).
+  - The UCMR program was developed in coordination with the Contaminant Candidate List (CCL).
+  - Monitors all large PWSs (>10,000), all small PWSs (3,300-10,000), and a representative sample of small PWSs (<3,300).
   - Contains disinfectant type and treatment information useful info to match by PWSID and merge with data from SDWIS and SYR. Disinfectant Residual (e.g. Free Chlorine, Chloramine) and treatment information (e.g. GAC, Ionic exchange, etc.) only available UCMR4 onwards.
 
 - <u>Link</u>: https://www.epa.gov/dwucmr
@@ -157,6 +162,7 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
     - CDC SVI: https://www.atsdr.cdc.gov/placeandhealth/svi/index.html for social vulnerability index (SVI) 
     - CDC ENJI: https://www.atsdr.cdc.gov/placeandhealth/eji/index.html for environmental justice index (EJI)
     - USGS: https://www.usgs.gov/ provides geographical data and shapefiles
+    - US Census Bureau: https://data.census.gov/ for Census data updated every 10 years about the nation's people and the economy
     - R script on how to geocode by address:
 ```r
 # install the necessary libraries
@@ -231,4 +237,12 @@ Texas Drinking Water Watch
 	- **UP**: Unit Process—a sampling point used to evaluate the effectiveness of a unit process. This type might be used, for instance, to determine the contact time under the Surface Water Treatment Rule for a single unit process.
 	- **WS**: Water System Facility point. <br />
  
-(Source: <u>Link</u>: https://dec.alaska.gov/dww/Help/html_Type_of_Sampling_Point.htm)
+ - Source: https://dec.alaska.gov/dww/Help/html_Type_of_Sampling_Point.htm
+
+## Size category (based on people served by the system)
+Size category (based on people served by the system)
+* 1 = Very Small <=500
+* 2 = Small 501-3,300
+* 3 = Medium 3,301-10,000
+* 4 = Large 10,001-100,000
+* 5 = Very large >100,000
