@@ -222,7 +222,15 @@ Texas Drinking Water Watch
 
 
 ------
+## Drinking Water Regulations
+**<u>SDWA Rules and enforcement dates</u>**: contains drinking water rule pages which states the enforcement dates of each rule grouped by contaminant type. 
 
+- <u>Summary</u>: The EPA regulates over 90 contaminants in drinking water, setting limits to protect health and ensure water systems can comply using current technology. The Safe Drinking Water Act allows states to enforce their own standards, provided they are as strict as the EPA's.
+    - <u>Link</u>: https://www.epa.gov/dwreginfo/drinking-water-regulations
+    - Some SDWA rule names and enforcement dates: Arsenic, Arsenic Rule (2006); GWR, Ground Water Rule (2009); IESW, Interim Enhanced SurfaceWater Treatment Rule(2002); LCR, Lead and Copper Rule (1992); LT1ESW, Long Term 1 Enhanced Surface Water Treatment Rule (2005); NIPDWR, National Interim Primary Drinking Water Regulations (1977); Phase I Rule (1989); Phase II Rule (1992); PhaseV Rule (1994); Radionuclides, Radionuclides Rule (2003); RLCR, Revised Lead and Copper Rule (2007); RTCR, Revised Total Coliform Rule (2016); Stage1 DBPs, Stage1 Disinfectants and Disinfection By-productsRule (2002–2004); Stage2 DBPs, Stage2 Disinfectants and Disinfection By-products Rule (2012–2013); SWTR, SurfaceWater Treatment Rule (1993); TCR, Total Coliform Rule (1990); and Trihalomethanes, Total Trihalomethanes (1981–1983).
+    - When the EPA adopts a new standard for contaminants in drinking water, such as reducing the arsenic MCL from 50 ppb to 10 ppb on January 22, 2001, it also sets a compliance deadline for water utilities, which, in this case, was January 23, 2006. This gives utilities time to adjust their systems to meet the new requirements.
+   - EPA uses the Unregulated Contaminant Monitoring Program to collect data for contaminants suspected to be present in drinking water, but that do not have health-based standards set under the SDWA. Every five years EPA reviews the list of contaminants, largely based on the Contaminant Candidate List (see UCMR).
+  
 ## Type of Sampling Point
 **<u>Type of Sampling Point</u>**: indicates the location or function of the sampling point. Type could be one of the following:
 - **DS**: Distribution System—the location is in the distribution system of the water system. Examples of this type of sampling point include sampling points for Total Coliform, lead and copper, and perhaps disinfection by-products (see several of the types below for more precise ways to define disinfection by-products sampling points).
