@@ -4,7 +4,9 @@ Analyzing drinking water standards and regulations. This git repository contains
 The website for this project can be viewed here (*in progress*).
 
 ## 💧 Executive Summary 💧
-I spent a lot of time exploring various drinking water database available on the internet including national, state-level, and local-level databases. I evaluated resources on the relevance of the data they provided as well as how easily the data could be accessed and downloaded, a summary of which is provided below. I also generated a number of R scripts, provided as interactive R markdown notebooks (.Rmd) files that demonstrate how some of these datasets are accessed and visualized. 
+I spent a lot of time exploring various drinking water database available on the internet including national, state-level, and local-level databases. I evaluated resources on the relevance of the data they provided as well as how easily the data could be accessed and downloaded, a summary of which is provided below. Using a 1 to 5 water drop scale, with 1 being the lowest and 5 the highest, in terms of ease of access and utility of data. Ease of access ranges from 1 drop for data that is hard to access to 5 drops for data that is readily available online. In terms of utility, 1 drop denotes data with limited application, serving primarily as reference material like MCL values or enforcement dates, while 5 drops indicate data of high utility, suitable for conducting extensive analyses and answering research questions. 
+
+I also generated a number of R scripts, provided as interactive R markdown notebooks (.Rmd) files that demonstrate how some of these datasets are accessed and visualized. 
 
 While this represents a number of useful sites, it's certainly not exhaustive. 
 
@@ -13,12 +15,12 @@ While this represents a number of useful sites, it's certainly not exhaustive.
 | Source          | Dataset                                                      | Ease of Access | Data Utility | Comments                                                 |
 | --------------- | ------------------------------------------------------------ | :------------: | :----------: | -------------------------------------------------------- |
 | EPA             | [Safe Drinking Water Information System (SDWIS)](https://www.epa.gov/enviro/web-services) |       💧💧💧💧       |     💧💧💧      | Limited Data, easy to scrape with R. <br />Can get violation data, treatment, water system detail, and purchaser-seller info. <br />Updated quarterly.                            |                              |
-| EPA             | [Enforcement & Compliance History Online (ECHO)](https://echo.epa.gov/) |      💧💧💧      |    💧💧💧💧💧     | Good, but so much data it's hard to know what's what     |
-| EPA             | [USEPA Six Year Review](https://www.epa.gov/dwsixyearreview) |       💧💧💧💧       |     💧💧💧💧      | Data rich, easy to scrape. <br />Reports National occurence for each contaminant (not just the violations). <br />Updated every 6 years.  |
-| USGS/EPA        | [Water Quality Portal](https://www.waterqualitydata.us/)     |     💧💧💧💧💧      |    💧💧💧💧💧     | Well organized & <br />comprehensive data                |
-| EPA | [Unregulated Contaminant Monitoring Rule (UCMR)](https://www.epa.gov/dwucmr) |     💧💧💧💧💧      |    💧💧     | Occurrence on unregulated contaminants. <br />Reports disinfection type, residual, and treatment info. <br />Updated every 5 years.    
-| EPA | [USEPA IRIS Information](https://www.epa.gov/iris) |     💧💧💧💧💧      |    💧💧     | Concentration on drinking (oral) route of exposure, not air. <br />Toxicology information, Maximum Contaminant Level (MCL) info.                        |
-| EPA | [Drinking Water Regulations](https://www.epa.gov/dwreginfo/drinking-water-regulations) |       💧💧💧💧💧       |    💧💧     | SDWA rules and enforcement dates.        
+| EPA             | [Enforcement & Compliance History Online (ECHO)](https://echo.epa.gov/) |      💧💧💧      |    💧💧💧💧💧     | Good, but so much data it's hard to know what's what.     |
+| EPA             | [USEPA Six Year Review](https://www.epa.gov/dwsixyearreview) |       💧💧💧💧       |     💧💧💧💧      | Data rich, easy to scrape or download as .zip file. <br />Reports National occurence for each contaminant (not just the violations). <br />Updated every 6 years.  |
+| USGS/EPA        | [Water Quality Portal](https://www.waterqualitydata.us/)     |     💧💧💧💧💧      |    💧💧💧💧💧     | Well organized & comprehensive data.                |
+| EPA | [Unregulated Contaminant Monitoring Rule (UCMR)](https://www.epa.gov/dwucmr) |     💧💧💧💧💧      |    💧💧     | Occurrence on unregulated contaminants. Easy to download as .zip file. <br />Reports disinfection type, residual, and treatment info. <br />Updated every 5 years.    
+| EPA | [USEPA IRIS Information](https://www.epa.gov/iris) |     💧💧💧💧💧      |    💧     | Concentration on drinking (oral) route of exposure, not air. <br />Toxicology information, Maximum Contaminant Level (MCL) info.                        |
+| EPA | [Drinking Water Regulations](https://www.epa.gov/dwreginfo/drinking-water-regulations) |       💧💧💧💧💧       |    💧     | SDWA rules and enforcement dates.        
 
 
 ---
