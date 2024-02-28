@@ -19,7 +19,7 @@ While this represents a number of useful sites, it's certainly not exhaustive.
 | EPA             | [USEPA Six Year Review](https://www.epa.gov/dwsixyearreview) |       💧💧💧💧       |     💧💧💧💧      | Data rich, easy to scrape or download as .zip file. <br />Reports National occurence for each contaminant (not just the violations). <br />Updated every 6 years.  |
 | USGS/EPA        | [Water Quality Portal](https://www.waterqualitydata.us/)     |     💧💧💧💧💧      |    💧💧💧💧💧     | Well organized & comprehensive data.                |
 | EPA | [Unregulated Contaminant Monitoring Rule (UCMR)](https://www.epa.gov/dwucmr) |     💧💧💧💧💧      |    💧💧     | Occurrence on unregulated contaminants. Easy to download as .zip file. <br />Reports disinfection type, residual, and treatment info. <br />Updated every 5 years.    
-| EPA | [USEPA IRIS Information](https://www.epa.gov/iris) |     💧💧💧💧💧      |    💧     | Concentration on drinking (oral) route of exposure, not air. <br />Toxicology information, Maximum Contaminant Level (MCL) info.                        |
+| EPA | [USEPA IRIS Information](https://www.epa.gov/iris) |     💧💧💧💧💧      |    💧     | Concentration on drinking (oral) route of exposure, not air. Download NPDWR MCL table as PDF. <br />Toxicology information, Maximum Contaminant Level (MCL) info.                        |
 | EPA | [Drinking Water Regulations](https://www.epa.gov/dwreginfo/drinking-water-regulations) |       💧💧💧💧💧       |    💧     | SDWA rules and enforcement dates.        
 
 
@@ -151,11 +151,11 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
 - **<u>Overview</u>**: Good for toxicity information
   - "What is the toxicity?"
 
-- <u>Link</u>: https://www.epa.gov/iris
+- Integrated Risk Information System <u>Link</u>:  https://www.epa.gov/iris
 - <u>Summary</u>: IRIS assessments provide the following toxicity values for health effects resulting from chronic exposure to chemicals.
 - <u>Data</u>:
-    - Integrated Risk Information System: https://www.epa.gov/iris
     - National Primary Drinking Water Regulations: https://www.epa.gov/ground-water-and-drinking-water/national-primary-drinking-water-regulations
+    - National Primary Drinking Water Regulation Table (download PDF): https://www.epa.gov/ground-water-and-drinking-water/national-primary-drinking-water-regulation-table
    
 - <u>Code examples</u>: None
 
