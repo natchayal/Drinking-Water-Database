@@ -156,6 +156,8 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
 - <u>Data</u>:
     - National Primary Drinking Water Regulations: https://www.epa.gov/ground-water-and-drinking-water/national-primary-drinking-water-regulations
     - National Primary Drinking Water Regulation Table (download PDF): https://www.epa.gov/ground-water-and-drinking-water/national-primary-drinking-water-regulation-table
+    - IRIS Assessments: https://iris.epa.gov/AtoZ/?list_type=erd
+    - Chemical Toxicity Dashboard: https://comptox.epa.gov/dashboard/
    
 - <u>Code examples</u>: None
 
@@ -264,3 +266,6 @@ Texas Drinking Water Watch
 * 3 = Medium 3,301-10,000
 * 4 = Large 10,001-100,000
 * 5 = Very large >100,000
+
+### How EPA Regulates Drinking Water Contaminants
+* <u>Link</u>: https://www.epa.gov/sdwa/how-epa-regulates-drinking-water-contaminants
