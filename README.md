@@ -22,7 +22,9 @@ While this represents a number of useful sites, it's certainly not exhaustive.
 | EPA | [USEPA IRIS Information](https://www.epa.gov/iris) |     💧💧💧💧💧      |    💧     | Concentration on drinking (oral) route of exposure, not air. Download NPDWR [MCL table](https://www.epa.gov/sites/default/files/2016-06/documents/npwdr_complete_table.pdf) as .pdf. <br />Info on Toxicology data used for setting Maximum Contaminant Level (MCL).                        |
 | EPA | [Drinking Water Regulations](https://www.epa.gov/dwreginfo/drinking-water-regulations) |       💧💧💧💧💧       |    💧     | SDWA rules and enforcement dates. Download [Regulation Timeline](https://www.epa.gov/sites/default/files/2015-10/documents/dw_regulation_timeline.pdf) as .pdf.      
 
-
+---
+## Overview of Regulatory Development Processes
+![](images/flowsheet_sdwa_regulatory_process.png)
 ---
 
 ## I. National Data Sources
