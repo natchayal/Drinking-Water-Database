@@ -278,3 +278,9 @@ Texas Drinking Water Watch
 * 3 = Medium 3,301-10,000
 * 4 = Large 10,001-100,000
 * 5 = Very large >100,000
+
+### US EPA Regional Offices
+- <u>Summary</u>: EPA has ten Regional offices, each responsible for execution of their programs within several states and territories.
+- <u>Link to image source and to get more information</u>: [EPA Regional and Geographic Offices](https://www.epa.gov/aboutepa/regional-and-geographic-offices) <br /> <br />
+
+![](images/usepa-regions.png)
