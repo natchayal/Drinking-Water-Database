@@ -14,13 +14,13 @@ While this represents a number of useful sites, it's certainly not exhaustive.
 
 | Source          | Dataset                                                      | Ease of Access | Data Utility | Comments                                                 |
 | --------------- | ------------------------------------------------------------ | :------------: | :----------: | -------------------------------------------------------- |
-| EPA             | [Safe Drinking Water Information System (SDWIS)](https://www.epa.gov/enviro/web-services) |       💧💧💧💧       |     💧💧💧      | Limited Data, easy to scrape with R. <br />Can get violation data, treatment, water system detail, and purchaser-seller info. <br />Updated quarterly.                            |                              |
+| EPA             | [Safe Drinking Water Information System (SDWIS)]( https://ofmpub.epa.gov/apex/sfdw/f?p=108:1:0::NO:1) |       💧💧💧💧       |     💧💧💧      | Limited data, easy to scrape with R. <br />Can get violation data, treatment, water system detail, and purchaser-seller info. <br />Updated quarterly.                            |                              |
 | EPA             | [Enforcement & Compliance History Online (ECHO)](https://echo.epa.gov/) |      💧💧💧      |    💧💧💧💧💧     | Good, but so much data it's hard to know what's what.     |
 | EPA             | [USEPA Six Year Review](https://www.epa.gov/dwsixyearreview) |       💧💧💧💧       |     💧💧💧💧      | Data rich, easy to scrape or download as .zip file. <br />Reports National occurence for each contaminant (not just the violations). <br />Updated every 6 years.  |
 | USGS/EPA        | [Water Quality Portal](https://www.waterqualitydata.us/)     |     💧💧💧💧💧      |    💧💧💧💧💧     | Well organized & comprehensive data.                |
 | EPA | [Unregulated Contaminant Monitoring Rule (UCMR)](https://www.epa.gov/dwucmr) |     💧💧💧💧💧      |    💧💧     | Occurrence on unregulated contaminants. Easy to download as .zip file. <br />Reports disinfection type, residual, and treatment info. <br />Updated every 5 years.    
-| EPA | [USEPA IRIS Information](https://www.epa.gov/iris) |     💧💧💧💧💧      |    💧     | Concentration on drinking (oral) route of exposure, not air. Download NPDWR MCL table as [PDF](https://www.epa.gov/sites/default/files/2016-06/documents/npwdr_complete_table.pdf). <br />Toxicology information, Maximum Contaminant Level (MCL) info.                        |
-| EPA | [Drinking Water Regulations](https://www.epa.gov/dwreginfo/drinking-water-regulations) |       💧💧💧💧💧       |    💧     | SDWA rules and enforcement dates.        
+| EPA | [USEPA IRIS Information](https://www.epa.gov/iris) |     💧💧💧💧💧      |    💧     | Concentration on drinking (oral) route of exposure, not air. Download NPDWR [MCL table](https://www.epa.gov/sites/default/files/2016-06/documents/npwdr_complete_table.pdf) as .pdf. <br />Info on Toxicology data used for setting Maximum Contaminant Level (MCL).                        |
+| EPA | [Drinking Water Regulations](https://www.epa.gov/dwreginfo/drinking-water-regulations) |       💧💧💧💧💧       |    💧     | SDWA rules and enforcement dates. Download [Regulation Timeline](https://www.epa.gov/sites/default/files/2015-10/documents/dw_regulation_timeline.pdf) as .pdf.      
 
 
 ---
@@ -68,9 +68,9 @@ While this represents a number of useful sites, it's certainly not exhaustive.
   - For other Envirofacts Data Service: API https://www.epa.gov/enviro/sdwis-model (How these files relate is described here)
   
   - "What happens to violators?"
-  	- When a Public Water System (PWS) violates regulations, such as exceeding Maximum Contaminant Levels (MCL), it: (1) must issue a notice within 24 hours. (2) must correct the issue. (3) risks becoming a serious violator. (4) could face enforcement action by EPA, financial or legal actions, if fail to resolve and system has been in noncompliance continuously for 3 years. <br/>Read more here:  https://echo.epa.gov/help/sdwa-faqs
+  	- When a Public Water System (PWS) violates regulations, such as exceeding Maximum Contaminant Levels (MCL), it: (1) must issue a notice within 24 hours. (2) must correct the issue. (3) risks being added to EPA's serious violator list. (4) could face enforcement action by EPA, financial or legal actions, if fail to resolve and system has been in noncompliance continuously for 3 years. <br/>Read more here:  https://echo.epa.gov/help/sdwa-faqs
 
-Note: When analyzing violations, it may be more beneficial to count Public Water System (PWS) with the violation once per year, regardless of multiple quarterly violations. This method ensures a clearer understanding of yearly compliance without double-counting PWSs with multiple violations of the same contaminant due to multiple sampling.
+Note: When analyzing violations, it may be more beneficial to count Public Water System (PWS) with the violation once per year, regardless of multiple quarterly violations. This method ensures a clearer understanding of yearly compliance without double-counting PWSs with multiple violations of the same contaminant due to multiple sampling. May also want to consider limiting sample to CWSs with consistent reporting over the study period and serving more than 500 people because SDWS regulations apply to small CWSs differently, especially in terms of sampling frequency. Sampling frequency could influence the likelihood of detecting a violation. For example, some DBPs only need to be sampled on an annual basis, rather than quarterly, for CWSs serving less than 500 people. Furthermore, very small systems are more likely to have inadequate reporting practices. A limitation of the SDWA violations dataset is underreporting. Check both Health-based violations (includes MCL, MRDL, TT violations) and Monitoring and reporting violatons (MR violations).
 
 ### B. EPA Enforcement and Compliance History Online (ECHO)
 
@@ -133,15 +133,15 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
 ### F. Unregulated Contaminant Monitoring Rule (UCMR)
 
 - **<u>Overview</u>**: Only place to get data on unregulated contaminants
-  - The 1996 Safe Drinking Water Act (SDWA) amendments require that once every five years EPA issue a new list of no more than 30 unregulated contaminants to be monitored by public water systems (PWSs).
-  - The UCMR program was developed in coordination with the Contaminant Candidate List (CCL).
+  - The 1996 Safe Drinking Water Act (SDWA) amendments require that once every five years EPA issue a new Contaminant Candidate List (CCL) of no more than 30 unregulated contaminants to be monitored by public water systems (PWSs).
+  - The UCMR program was developed in coordination with the CCL.
   - Monitors all large PWSs (>10,000), all small PWSs (3,300-10,000), and a representative sample of small PWSs (<3,300).
   - Contains disinfectant type and treatment information useful info to match by PWSID and merge with data from SDWIS and SYR. Disinfectant Residual (e.g. Free Chlorine, Chloramine) and treatment information (e.g. GAC, Ionic exchange, etc.) only available UCMR4 onwards.
 
 - <u>Link</u>: https://www.epa.gov/dwucmr
-- <u>Summary</u>: EPA uses the Unregulated Contaminant Monitoring Rule (UCMR) to collect data for contaminants suspected to be present in drinking water, but that do not have regulatory standards set under the Safe Drinking Water Act (SDWA). The monitoring provides EPA and other interested parties with nationally representative data on the occurrence of contaminants in drinking water, the number of people potentially being exposed, and an estimate of the levels of that exposure. These data can support future regulatory determinations and other actions to protect public health.
+- <u>Summary</u>: EPA uses the Unregulated Contaminant Monitoring Rule (UCMR) to collect data for contaminants suspected to be present in drinking water, but that do not have regulatory standards set under the Safe Drinking Water Act (SDWA). The monitoring provides EPA and other interested parties with nationally representative data on the occurrence of contaminants in drinking water, the number of people potentially being exposed, and an estimate of the levels of that exposure. These data can support future regulatory determinations and other actions to protect public health. 
 - <u>Data</u>:
-    - Occurence: https://www.epa.gov/dwucmr/occurrence-data-unregulated-contaminant-monitoring-rule
+    - Unregulated Contaminant Occurence data: https://www.epa.gov/dwucmr/occurrence-data-unregulated-contaminant-monitoring-rule
    
 - <u>Code examples</u>: None
 
@@ -149,15 +149,17 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
 ### F. USEPA IRIS Information
 
 - **<u>Overview</u>**: Good for toxicity information
-  - "What is the toxicity?"
+  - "What is the toxicity? (IRIS database contains the toxicology data used in setting the MCL)"
 
 - Integrated Risk Information System <u>Link</u>:  https://www.epa.gov/iris
-- <u>Summary</u>: IRIS assessments provide the following toxicity values for health effects resulting from chronic exposure to chemicals.
+- <u>Summary</u>: IRIS assessments provide the following toxicity values for health effects resulting from chronic exposure to chemicals. These values include the oral reference dose (RfD) and other data used in setting each contaminant's Maximum Contaminant Level (MCL). EPA's risk management decision is a function of the MCL, which in turn is based upon IRIS data.
 - <u>Data</u>:
+    - IRIS Assessments: https://iris.epa.gov/AtoZ/?list_type=erd (documentation evaluating the health implications, chemical composition, toxicity profile, and reference dose associated with a specific contaminant)
+    - Chemical Toxicity Dashboard: https://comptox.epa.gov/dashboard/ (A dashboard for chemical toxicity)
+    - More on regulations:
     - National Primary Drinking Water Regulations: https://www.epa.gov/ground-water-and-drinking-water/national-primary-drinking-water-regulations
-    - National Primary Drinking Water Regulation Table (download PDF): https://www.epa.gov/ground-water-and-drinking-water/national-primary-drinking-water-regulation-table
-    - IRIS Assessments: https://iris.epa.gov/AtoZ/?list_type=erd
-    - Chemical Toxicity Dashboard: https://comptox.epa.gov/dashboard/
+    - National Primary Drinking Water Regulation Table (link to download PDF): https://www.epa.gov/ground-water-and-drinking-water/national-primary-drinking-water-regulation-table (A table of drinking water MCLs)
+    - Regulation Timeline under SDWA (link to download PDF): https://www.epa.gov/sdwa/regulation-timeline-contaminants-regulated-under-safe-drinking-water-act
    
 - <u>Code examples</u>: None
 
@@ -235,13 +237,21 @@ Texas Drinking Water Watch
 ## IV. Other Resources
 
 ### Drinking Water Regulations
-**<u>SDWA Rules and enforcement dates</u>**: contains drinking water rule pages which states the enforcement dates of each rule grouped by contaminant type. 
+* <u>How EPA Regulates Drinking Water Contaminants</u>: https://www.epa.gov/sdwa/how-epa-regulates-drinking-water-contaminants 
+* <u>MCL Table</u>: https://www.epa.gov/ground-water-and-drinking-water/national-primary-drinking-water-regulation-table
 
+**<u>SDWA Rules and enforcement dates</u>**: contains drinking water rule pages which states the enforcement dates of each rule grouped by contaminant type. 
 - <u>Summary</u>: The EPA regulates over 90 contaminants in drinking water, setting limits to protect health and ensure water systems can comply using current technology. The Safe Drinking Water Act allows states to enforce their own standards, provided they are as strict as the EPA's.
-    - <u>Link</u>: https://www.epa.gov/dwreginfo/drinking-water-regulations
-    - Some SDWA rule names and enforcement dates: Arsenic, Arsenic Rule (2006); GWR, Ground Water Rule (2009); IESW, Interim Enhanced SurfaceWater Treatment Rule(2002); LCR, Lead and Copper Rule (1992); LT1ESW, Long Term 1 Enhanced Surface Water Treatment Rule (2005); NIPDWR, National Interim Primary Drinking Water Regulations (1977); Phase I Rule (1989); Phase II Rule (1992); PhaseV Rule (1994); Radionuclides, Radionuclides Rule (2003); RLCR, Revised Lead and Copper Rule (2007); RTCR, Revised Total Coliform Rule (2016); Stage1 DBPs, Stage1 Disinfectants and Disinfection By-productsRule (2002–2004); Stage 2 DBPs, Stage 2 Disinfectants and Disinfection By-products Rule (2012–2013); SWTR, SurfaceWater Treatment Rule (1993); TCR, Total Coliform Rule (1990); and Trihalomethanes, Total Trihalomethanes (1981–1983).
-    - When the EPA adopts a new standard for contaminants in drinking water, such as reducing the arsenic MCL from 50 ppb to 10 ppb on January 22, 2001, it also sets a compliance deadline for water utilities, which, in this case, was January 23, 2006. This gives utilities time to adjust their systems to meet the new requirements.
-   - EPA uses the Unregulated Contaminant Monitoring Program to collect data for contaminants suspected to be present in drinking water, but that do not have health-based standards set under the SDWA. Every five years EPA reviews the list of contaminants, largely based on the Contaminant Candidate List (see UCMR).
+	- <u>NPDWR DW Regulations</u>: https://www.epa.gov/ground-water-and-drinking-water/national-primary-drinking-water-regulations 
+ 	- <u>NPDWR GW and DW Regulations</u>: https://www.epa.gov/dwreginfo/drinking-water-regulations
+    - Some SDWA rule names and enforcement dates: Arsenic, Arsenic Rule (2006); GWR, Ground Water Rule (2009); IESW, Interim Enhanced SurfaceWater Treatment Rule(2002); LCR, Lead and Copper Rule (1992); LT1ESW, Long Term 1 Enhanced Surface Water Treatment Rule (2005); NIPDWR, National Interim Primary Drinking Water Regulations (1977); Phase I Rule (1989); Phase II Rule (1992); PhaseV Rule (1994); Radionuclides, Radionuclides Rule (2003); RLCR, Revised Lead and Copper Rule (2007); RTCR, Revised Total Coliform Rule (2016); Stage 1 DBPs, Stage 1 Disinfectants and Disinfection By-productsRule (2002–2004); Stage 2 DBPs, Stage 2 Disinfectants and Disinfection By-products Rule (2012–2013); SWTR, Surface Water Treatment Rule (1993); TCR, Total Coliform Rule (1990); and Trihalomethanes, Total Trihalomethanes (1981–1983).
+    	- <u>Regulation Timeline under the SDWA</u>: https://www.epa.gov/sdwa/regulation-timeline-contaminants-regulated-under-safe-drinking-water-act <br />
+    - Two important dates: When the EPA adopts a new standard for contaminants in drinking water, such as reducing the arsenic MCL from 50 ppb to 10 ppb on January 22, 2001, it also sets a compliance deadline for water utilities, which, in this case, was January 23, 2006. This gives utilities time to adjust their systems to meet the new requirements. When performing timeseries analysis, must decide on which of the two dates to use.
+   - Every five years EPA reviews the list of contaminants, largely based on the Contaminant Candidate List (CCL), then list and collect monitoring data for up to 30 contaminants (UCMR), then determine whether at least five need a drinking water standard (Regulatory Determinations), if yes, then develop or revise the drinking water standard (Regulation Devlopment), then collect Six-Year Review data review and decide whether to revise the standard (SYR). 
+
+**<u>More readings</u>**: 
+* <u>Enforcement History</u>: https://www.epa.gov/enforcement/water-enforcement <br />
+* <u>EPA's Event Milestones</u>: https://www.epa.gov/history/milestones-epa-and-environmental-history
   
 ### Type of Sampling Point
 **<u>Type of Sampling Point</u>**: indicates the location or function of the sampling point. Type could be one of the following:
@@ -260,12 +270,9 @@ Texas Drinking Water Watch
 - Source: https://dec.alaska.gov/dww/Help/html_Type_of_Sampling_Point.htm
 
 ### Size category (based on people served by the system)
-**<u>Size category**<u> (based on people served by the system)
+**<u>Size category</u>** (based on people served by the system)
 * 1 = Very Small <=500
 * 2 = Small 501-3,300
 * 3 = Medium 3,301-10,000
 * 4 = Large 10,001-100,000
 * 5 = Very large >100,000
-
-### How EPA Regulates Drinking Water Contaminants
-* <u>Link</u>: https://www.epa.gov/sdwa/how-epa-regulates-drinking-water-contaminants
