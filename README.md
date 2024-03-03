@@ -24,7 +24,7 @@ While this represents a number of useful sites, it's certainly not exhaustive.
 
 ---
 ## Overview of Regulatory Development Processes
-![](images/flowsheet_sdwa_regulatory_process.png)
+![](images/flowsheet_sdwa_regulatory_processes.png)
 ---
 
 ## I. National Data Sources
