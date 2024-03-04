@@ -20,14 +20,30 @@ While this represents a number of useful sites, it's certainly not exhaustive.
 | USGS/EPA        | [Water Quality Portal (WQP)](https://www.waterqualitydata.us/)     |     💧💧💧💧💧      |    💧💧💧💧💧     | Well organized & comprehensive data.                |
 | EPA | [Unregulated Contaminant Monitoring Rule (UCMR)](https://www.epa.gov/dwucmr) |     💧💧💧💧💧      |    💧💧     | Easy to download as .zip file. <br />Reports occurrence on unregulated contaminants, disinfection type avilable for UCMR4 onwards, residual, and treatment info. <br />*Updated every 5 years*.    
 | EPA | [Contaminant Candidate List (CCL)](https://www.epa.gov/ccl) |     💧💧💧💧💧      |    💧     | Lists unregulated contaminants to be submitted as candidates for regulatory determinations. <br />*Updated every 5 years*.
-| EPA | [USEPA IRIS Information](https://www.epa.gov/iris) |     💧💧💧💧💧      |    💧     | Concentration on drinking (oral) route of exposure, not air. Download [NPDWR MCL table](https://www.epa.gov/sites/default/files/2016-06/documents/npwdr_complete_table.pdf) as .pdf. <br />See [IRIS Assessments](https://iris.epa.gov/AtoZ/?list_type=erd) for info on Toxicology data used for setting Maximum Contaminant Level (MCL).                       |
+| EPA | [USEPA IRIS Information](https://www.epa.gov/iris) |     💧💧💧💧💧      |    💧     | Concentration on drinking (oral) route of exposure, not air. Download [NPDWR MCL table](https://www.epa.gov/sites/default/files/2016-06/documents/npwdr_complete_table.pdf) as .pdf. <br />See [IRIS Assessments](https://iris.epa.gov/AtoZ/?list_type=erd) and [ComTox Chemicals Dashboard](https://comptox.epa.gov/dashboard/) for info on Toxicology data used for setting Maximum Contaminant Level (MCL).                       |
 | EPA | [Drinking Water Regulations](https://www.epa.gov/dwreginfo/drinking-water-regulations) |       💧💧💧💧💧       |    💧     | SDWA rules and enforcement dates. Download [Regulation Timeline](https://www.epa.gov/sites/default/files/2015-10/documents/dw_regulation_timeline.pdf) as .pdf.      
 
 ---
-## Overview of Regulatory Development Processes
+## [Overview of Regulatory Development Processes](https://www.epa.gov/sdwa/sdwa-evaluation-and-rulemaking-process)
 ![](images/flowsheet_sdwa_regulatory_processes.png)
+
+The [Contaminant Candidate List (CCL)](https://github.com/natchayal/Drinking-Water-Database/edit/main/README.md#f-usepa-contaminant-candidate-list-ccl) is the starting point of EPA's regulatory development process. Every 5 years, EPA is required by the Safe Drinking Water Act (SDWA) to publish a new list of CCL to determine which unregulated contaminants to monitor for under EPA's [Unregulated Monitoring Program (UCMR)](https://github.com/natchayal/Drinking-Water-Database/edit/main/README.md#f-unregulated-contaminant-monitoring-rule-ucmr). UCMRs are limited to no more than 30 contaminants (every five years), and the monitoring is required for all large public water systems (PWSs) that serve more than 10,000 people, all small PWSs serving between 3,300 and 10,000 people, and a representative sample of small PWSs serving fewer than 3,300 people. UCMR data are then used to make regulatory determinations of whether to develop a [National Primary Drinking Water Regulation (NPWDR)](https://github.com/natchayal/Drinking-Water-Database/edit/main/README.md#drinking-water-regulations) for a contaminant. The SDWA requires EPA to make regulatory determinations for at least five contaminants on the CCL. During the final round of decisions which evaluates the final CCL list and UCMR results, EPA can decide to regulate or not to regulate the contaminants from the final CCL list. SDWA specifies three criteria that must be met in order for the development of a national regulation (1. Contaminant has adverse health effects on people, 2. Contaminant known to occur/substantial likelihood to occur in a PWS at frequency and level of concern, 3. Regulation of contaminant presents meaningful opportunity to reduce health risks for populations served by public water). There can be delays if additional data needs to be considered to decide whether the contaminant satisfies all three criteria, and the interpretation of the words in criteria can influence what action is taken. Once the EPA has made the determination to issue a NPWDR, EPA has 24 months to develop a proposed regulation. After the proposal date, EPA has 18 months to finalize the regulation and can request an extension to that deadline if needed. Selecting the appropriate [Maximum Contaminant Level (MCL)](https://github.com/natchayal/Drinking-Water-Database/edit/main/README.md#setting-an-mcl-and-mclg) can be complicated and involves evaluating several science and policy options. EPA must consult with its Science Advisory Board (SAB) and the National Drinking Water Avisory Council (NDWAC). EPA may also conduct a "negotiated rulemaking" with stakeholders under the provisions of the Federal Advisory Committee Act (FACA). As part of the RegDet process, many organizations submit public comments such as water systems and their respective associations, state regulators (includong ASDWA, AWWA, etc.), environmental advocacy groups, public interest groups, local elected officials and individual members of the public. Opportunities in the process for public input and comment are marked with a person icon. EPA reviews all existing regulations every [six years (Six-Year Review)](https://github.com/natchayal/Drinking-Water-Database/edit/main/README.md#c-usepa-six-year-review-syr) for evaluation of new data to assess whether a regulation needs to be revised. 
+
+Summary adapted from [asdwa.org](https://www.asdwa.org/sdwa-regulatory-development-process/), which give a pretty good summary of the process.
+
+---
+## [Setting an MCL and MCLG](https://www.epa.gov/iris/reference-dose-rfd-description-and-use-health-risk-assessments)
+![](images/regulation_development.png)
+
+Once the Maximum Contaminant Level Goal (MCLG) is determined, EPA sets an enforceable standard. In most cases, the standard is an MCL. The MCL is set as close to the MCLG as feasible. Taking cost into consideration, EPA must determine the feasible MCL. This is defined by the Federal SDWA as the level that may be achieved with:
+  - use of the best available technology or treatment approaches
+  - other means which EPA finds are available (after examination for efficiency under field conditions, not solely under laboratory conditions).
+
+See [IRIS Section](https://github.com/natchayal/Drinking-Water-Database/edit/main/README.md#g-usepa-iris-information)
+
 ---
 
+---
 ## I. National Data Sources
 
 ### A. EPA Safe Drinking Water Information System (SDWIS)
@@ -40,7 +56,7 @@ While this represents a number of useful sites, it's certainly not exhaustive.
 
 - **<u>SDWIS home page</u>**: https://www.epa.gov/enviro/topic-searches#water 
 
-- **<u>Summary</u>**: SDWIS tracks information on drinking water contamination levels as required by the 1974 Safe Drinking Water Act and its 1986 and 1996 amendments. Provides data on violations and enforcement history since 1993 of the EPA's drinking water regulations. 
+- **<u>Summary</u>**: "What is the violation rate?" SDWIS tracks information on drinking water contamination levels as required by the 1974 Safe Drinking Water Act and its 1986 and 1996 amendments. The site provides data on violations and enforcement history since 1993 of the EPA's drinking water regulations. 
 
 - **<u>Data</u>**: <br />
 <ins>Violation<in>:
@@ -72,7 +88,7 @@ While this represents a number of useful sites, it's certainly not exhaustive.
 - "What happens to violators?"
   - When a Public Water System (PWS) violates regulations, such as exceeding Maximum Contaminant Levels (MCL), it: (1) must issue a notice within 24 hours. (2) must correct the issue. (3) risks being added to EPA's serious violator list. (4) could face enforcement action by EPA, financial or legal actions, if fail to resolve and system has been in noncompliance continuously for 3 years. <br/>Read more here:  https://echo.epa.gov/help/sdwa-faqs
 
-Note: When analyzing violations, it may be more beneficial to count Public Water System (PWS) with the violation once per year, regardless of multiple quarterly violations. This method ensures a clearer understanding of yearly compliance without double-counting PWSs with multiple violations of the same contaminant due to multiple sampling. May also want to consider limiting sample to CWSs with consistent reporting over the study period and serving more than 500 people because SDWS regulations apply to small CWSs differently, especially in terms of sampling frequency. Sampling frequency could influence the likelihood of detecting a violation. For example, some DBPs only need to be sampled on an annual basis, rather than quarterly, for CWSs serving less than 500 people. Furthermore, very small systems are more likely to have inadequate reporting practices. A limitation of the SDWA violations dataset is underreporting. Check both Health-based violations (includes MCL, MRDL, TT violations) and Monitoring and reporting violatons (MR violations).
+Note: When analyzing violations, it may be more beneficial to count Public Water System (PWS) with the violation once per year, regardless of multiple quarterly violations. This method ensures a clearer understanding of yearly compliance without double-counting PWSs with multiple violations of the same contaminant due to multiple sampling. May also want to consider limiting sample to CWSs with consistent reporting over the study period and serving more than 500 people because SDWA regulations apply to small CWSs differently, especially in terms of sampling frequency. Sampling frequency could influence the likelihood of detecting a violation. For example, some DBPs only need to be sampled on an annual basis, rather than quarterly, for CWSs serving less than 500 people. Furthermore, very small systems are more likely to have inadequate reporting practices. A limitation of the SDWA violations dataset is underreporting. Check both Health-based violations (includes MCL, MRDL, TT violations) and Monitoring and reporting violatons (MR violations).
 
 ### B. EPA Enforcement and Compliance History Online (ECHO)
 
@@ -110,7 +126,7 @@ Note: When analyzing violations, it may be more beneficial to count Public Water
 
 - **<u>SYR home page</u>**: https://www.epa.gov/dwsixyearreview
 
-- **<u>Summary</u>**: The Safe Drinking Water Act (SDWA) requires EPA to review each national primary drinking water regulation at least once every six years and revise them, if appropriate. As part of the "Six-Year Review," EPA evaluates any newly available data, information and technologies to determine if any regulatory revisions are needed. Revisions must maintain or strengthen public health protection.
+- **<u>Summary</u>**: "What is the typical concentration?" The Safe Drinking Water Act (SDWA) requires EPA to review each national primary drinking water regulation at least once every six years and revise them, if appropriate. As part of the "Six-Year Review," EPA evaluates any newly available data, information and technologies to determine if any regulatory revisions are needed. Revisions must maintain or strengthen public health protection.
 
 - **Data**: 
   * Each zip file below contains data for multiple contaminants and related information that can be unzipped into tab delimited text files: https://www.epa.gov/dwsixyearreview
@@ -158,11 +174,11 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
 - <u>Code examples</u>: None
 
 ### F. USEPA Contaminant Candidate List (CCL) 
-- **<u>Overview</u>**: Only place to get a list of drinking water contaminants that are not currently subject to EPA drinking water regulations but under surveillance for potential future regulation.
+- **<u>Overview</u>**: Only place to get a list of drinking water contaminants that are not currently subject to EPA drinking water regulations but under surveillance for potential future regulation. 
   
 - **<u>CCL home page</u>**: https://www.epa.gov/ccl
   
-- **<u>Summary</u>**: EPA issues a new Contaminant Candidate List (CCL) every five years, serving as the first level of evaluation for unregulated drinking water contaminants if it presents a public health risk. Contaminants listed on the CCL may require future regulation under the Safe Drinking Water Act (SDWA). The SDWA requires EPA to periodically decide whether or not to regulate at least five contaminants on the Contaminant Candidate List during the 'Regulatory Determination' phase. A regulatory determination is a formal decision on whether EPA should initiate a process to develop a national primary drinking water regulation (NPDWR) for a specific contaminant based on the final CCL and UCMR monitoring results.
+- **<u>Summary</u>**: EPA issues a new Contaminant Candidate List (CCL) every five years, serving as the first level of evaluation for unregulated drinking water contaminants if it presents a public health risk. Contaminants listed on the CCL is used to determine which contaminants to monitor for under EPA's Unregulated Monitoring Program (UCMR) and may require future regulation under the Safe Drinking Water Act (SDWA). The SDWA requires EPA to periodically decide whether or not to regulate at least five contaminants on the Contaminant Candidate List during the 'Regulatory Determination' phase. A regulatory determination is a formal decision on whether EPA should initiate a process to develop a national primary drinking water regulation (NPDWR) for a specific contaminant based on the final CCL and UCMR monitoring results. The RegDet process involves determining whether a contaminant may have adverse health effects, whether a contaminant is found or substantially likely to be found in PWS with a frequency and at levels of concern, and whther there is a meaningful opportnity for health risk reduction through a national drinking water regulation.
   - Developed in coordination with the UCMR. 
 - **<u>Data</u>**:
     - Contaminant Candidate List: https://www.epa.gov/ccl
@@ -179,7 +195,9 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
 - **<u>Summary</u>**: "What is the toxicity?" The Integrated Risk Information System (IRIS) database contains the toxicology data used in setting the MCL. IRIS assessments provide the toxicity values for health effects resulting from chronic exposure to chemicals. These values include the oral reference dose (RfD) and other data used to assess the chemical. EPA's risk management decision is a function of the MCL, which in turn is based upon IRIS data.
 - **<u>Data</u>**:
     - IRIS Assessments: https://iris.epa.gov/AtoZ/?list_type=erd (documentation evaluating the health implications, chemical composition, toxicity profile, and reference dose associated with a specific contaminant)
-    - Chemical Toxicity Dashboard: https://comptox.epa.gov/dashboard/ (A dashboard for chemical toxicity) 
+    - Chemical Toxicity Dashboard: https://comptox.epa.gov/dashboard/ (a dashboard for chemical toxicity, enter chemical name and check out 'Executive Summary' tab)
+    - IRIS Glossary: https://www.epa.gov/iris/iris-glossary
+    - Reference Dose (RfD) Description and Use in Health Risk Assessments: https://www.epa.gov/iris/reference-dose-rfd-description-and-use-health-risk-assessments
    
 - <u>Code examples</u>: None
 
@@ -251,7 +269,12 @@ lat_longs <- some_addresses %>%
 ---
 
 ## III. Local Data Sources
-
+**Florida**
+- Managed by Southwest Florida Water Management Disrict (SFWMD)
+- Source for permits, hydrologic, atmospheric, water level, water-quality, and rainfall data collected by the District in Near-Real-Time:
+	- Water Management Information Sysem (WMIS): https://www18.swfwmd.state.fl.us/ResData/Search/ExtDefault.aspx now replaced by EDP
+ 	- Environmental Data Portal (EDP): https://www.swfwmd.state.fl.us/resources/data-maps/environmental-data-portal
+  	- Interactive Map Gallery: http://www.swfwmd.state.fl.us/resources/data-maps/interactive-map-gallery
 
 ------
 ## IV. Other Resources
@@ -287,6 +310,12 @@ lat_longs <- some_addresses %>%
 - **WS**: Water System Facility point. <br />
  
 - Source: https://dec.alaska.gov/dww/Help/html_Type_of_Sampling_Point.htm
+
+### Classifications
+EPA has defined three types of [public water systems](https://www.epa.gov/dwreginfo/information-about-public-water-systems):
+* **<u>Community Water System (CWS)</u>**: A public water system that supplies water to the same population year-round.
+* **<u>Non-Transient Non-Community Water System (NTNCWS)</u>**: A public water system that regularly supplies water to at least 25 of the same people at least six months per year. Some examples are schools, factories, office buildings, and hospitals which have their own water systems.
+* **<u>Transient Non-Community Water System (TNCWS)</u>**: A public water system that provides water in a place such as a gas station or campground where people do not remain for long periods of time.
 
 ### Size category (based on people served by the system)
 **<u>Size category</u>** (based on people served by the system)
