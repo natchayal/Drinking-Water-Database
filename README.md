@@ -37,19 +37,18 @@ While this represents a number of useful sites, it's certainly not exhaustive.
   - Possibly redundant with ECHO. 
   - Queries must be done iteratively with R. Server is often down.
 
-- <u>Link</u>: https://www.epa.gov/enviro/topic-searches#water 
+- **<u>Main SDWIS Site Link</u>**: https://www.epa.gov/enviro/topic-searches#water 
 
-- <u>Summary</u>: Data on violations and enforcement history since 1993 of the EPA's drinking water regulations. 
+- **<u>Summary</u>**: SDWIS tracks information on drinking water contamination levels as required by the 1974 Safe Drinking Water Act and its 1986 and 1996 amendments. Provides data on violations and enforcement history since 1993 of the EPA's drinking water regulations. 
 
-- <u>Data</u>:
-  
-  - Violation:
-    - The data is available from here, in limited capacity: https://www.epa.gov/enviro/sdwis-search (EASY)
-      	* SDWIS Search by: 'Select a geographic area' or 'Enter the water system ID number' (PWSID for tribal agencies will have region code instead of state code as prefix)
-    - Select data of interest and export report as a .csv file, use this link: https://ofmpub.epa.gov/apex/sfdw/f?p=108:1:0::NO:1 ; data only goes back 10 years; to get older records use R to scrape, see below. (BETTER)
-        * A full description of violation and contaminant codes can be accessed in the SDWA_REF_CODE_VALUES.csv of https://echo.epa.gov/files/echodownloads/SDWA_latest_downloads.zip
+- **<u>Data</u>**: <br />
+<ins>Violation<in>:
+    - By **interactive map** (EASY) - The data is available from here, in limited capacity: https://www.epa.gov/enviro/sdwis-search
+    	- SDWIS Search by: 'Select a geographic area' or 'Enter the water system ID number' (PWSID for tribal agencies will have region code instead of state code as prefix)
+    - By using the **SDWIS Federal Reports Advanced Search tool** (BETTER) - select data of interest and export report as a .csv file, use this link: https://ofmpub.epa.gov/apex/sfdw/f?p=108:1:0::NO:1 ; data only goes back 10 years; to get older records use R to scrape, see below.
+    	- A full description of violation and contaminant codes can be accessed in the SDWA_REF_CODE_VALUES.csv of https://echo.epa.gov/files/echodownloads/SDWA_latest_downloads.zip
     
-    - R script is based on the info contained here: https://www.epa.gov/enviro/web-services and https://www.epa.gov/enviro/envirofacts-data-service-api (BEST!)
+    - By using **R to scrape data** (BEST!) - R script is based on the info contained here: https://www.epa.gov/enviro/web-services and https://www.epa.gov/enviro/envirofacts-data-service-api
       - Then need to scrape sub-tables.
       - If you need to define a code or other parameter in the table, this link contains all that information: https://enviro.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=VIOLATION&p_topic=SDWIS
 - <u>Code examples</u> : 
@@ -64,28 +63,29 @@ While this represents a number of useful sites, it's certainly not exhaustive.
 	filename <- paste0("AllViolationData_EPA_EnvirofactsAPI_", format(Sys.Date(), "%m%d%y"), ".csv")
 	write.csv(DataMerged, file = filename, row.names=FALSE)
 ```
-  - Treatment:
-    - For treatment information, this link: https://enviro.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=TREATMENT&p_topic=SDWIS
+<ins>Treatment<ins>:
+- For treatment information, this link: https://enviro.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=TREATMENT&p_topic=SDWIS
 
-  - For other Envirofacts Data Service: API https://www.epa.gov/enviro/sdwis-model (How these files relate is described here)
+- For other Envirofacts Data Service: API https://www.epa.gov/enviro/sdwis-model (How these files relate is described here)
   
-  - "What happens to violators?"
-  	- When a Public Water System (PWS) violates regulations, such as exceeding Maximum Contaminant Levels (MCL), it: (1) must issue a notice within 24 hours. (2) must correct the issue. (3) risks being added to EPA's serious violator list. (4) could face enforcement action by EPA, financial or legal actions, if fail to resolve and system has been in noncompliance continuously for 3 years. <br/>Read more here:  https://echo.epa.gov/help/sdwa-faqs
+- "What happens to violators?"
+  - When a Public Water System (PWS) violates regulations, such as exceeding Maximum Contaminant Levels (MCL), it: (1) must issue a notice within 24 hours. (2) must correct the issue. (3) risks being added to EPA's serious violator list. (4) could face enforcement action by EPA, financial or legal actions, if fail to resolve and system has been in noncompliance continuously for 3 years. <br/>Read more here:  https://echo.epa.gov/help/sdwa-faqs
 
 Note: When analyzing violations, it may be more beneficial to count Public Water System (PWS) with the violation once per year, regardless of multiple quarterly violations. This method ensures a clearer understanding of yearly compliance without double-counting PWSs with multiple violations of the same contaminant due to multiple sampling. May also want to consider limiting sample to CWSs with consistent reporting over the study period and serving more than 500 people because SDWS regulations apply to small CWSs differently, especially in terms of sampling frequency. Sampling frequency could influence the likelihood of detecting a violation. For example, some DBPs only need to be sampled on an annual basis, rather than quarterly, for CWSs serving less than 500 people. Furthermore, very small systems are more likely to have inadequate reporting practices. A limitation of the SDWA violations dataset is underreporting. Check both Health-based violations (includes MCL, MRDL, TT violations) and Monitoring and reporting violatons (MR violations).
 
 ### B. EPA Enforcement and Compliance History Online (ECHO)
 
-- **<u>Overview</u>**: ***Promising!***
+- **<u>Overview</u>**: ***Promising***
   - Established data services capabilities with documented web services
   - Holds many datasets, though so much that it's somewhat confusing what it holds:
     - Drinking Water: https://echo.epa.gov/help/facility-search/drinking-water-search-results-help
     - Water Facility: https://enviro.epa.gov/envirofacts/sdwis/search
     - The EPA/State Drinking Water Dashboard: https://echo.epa.gov/trends/comparative-maps-dashboards/drinking-water-dashboard (quick view of violation trend)
 
-- <u>Link</u>: https://echo.epa.gov/
-- <u>Summary</u>: Provides compliance and enforcement information for over 900,000 regulated facilities nationwide. Allows query at state/county/city/zip level for a table of facilities and their compliance records. Not limited to water (NPDES and drinking water); includes air, hazardous waste,...
-- <u>Data</u>:
+- **<u>Main ECHO Site Link</u>**: https://echo.epa.gov/
+  
+- **<u>Summary</u>**: Provides compliance and enforcement information for over 900,000 regulated facilities nationwide. Allows query at state/county/city/zip level for a table of facilities and their compliance records. Not limited to water (NPDES and drinking water); includes air, hazardous waste,...
+- **<u>Data</u>**:
   - Main pages searches by form. Not REST interface. CSV's generated with temporary link. 	
   - Download utility meta data as ZIP file: https://echo.epa.gov/files/echodownloads/SDWA_latest_downloads.zip Containes files including spreadsheet with contaminant code and violation code references, for example:
     -  Contaminant Code: Nitrate (1040), TCR (3100) and RTCR (8000), HAA5 (2456), TTHMs (2950);
@@ -103,14 +103,14 @@ Note: When analyzing violations, it may be more beneficial to count Public Water
   - Does not contain system information
   - Can link with SDWIS database by matching PWSID to get more system information
 
-* <u>Link</u>: https://www.epa.gov/dwsixyearreview
+- **<u>Main SYR Site Link</u>**: https://www.epa.gov/dwsixyearreview
 
-* <u>Summary</u>: The Safe Drinking Water Act (SDWA) requires EPA to review each national primary drinking water regulation at least once every six years and revise them, if appropriate. As part of the "Six-Year Review," EPA evaluates any newly available data, information and technologies to determine if any regulatory revisions are needed. Revisions must maintain or strengthen public health protection.
+- **<u>Summary</u>**: The Safe Drinking Water Act (SDWA) requires EPA to review each national primary drinking water regulation at least once every six years and revise them, if appropriate. As part of the "Six-Year Review," EPA evaluates any newly available data, information and technologies to determine if any regulatory revisions are needed. Revisions must maintain or strengthen public health protection.
 
-* Data: 
+- **Data**: 
   * Each zip file below contains data for multiple contaminants and related information that can be unzipped into tab delimited text files: https://www.epa.gov/dwsixyearreview
   * Data is located at the following link, and is broken down by contaminant: example for SYR3 https://www.epa.gov/dwsixyearreview/six-year-review-3-compliance-monitoring-data-2006-2011
-* <u>Code examples</u>: 
+- <u>Code examples</u>: 
 ```r
 nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
 ```
@@ -121,11 +121,13 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
 - **<u>Overview</u>**: ***Most promising!*** 
   - Repository of many datasets from multiple sources (EPA, USGS).
   - Web services and file shares provide ready access to data with excellent documentation
-  - Need to compare what data are provided relative to state/local data portals. 
-- <u>Link</u>: https://www.waterqualitydata.us/
-- <u>Summary</u>:
+  - Need to compare what data are provided relative to state/local data portals.
+    
+- **<u>Main WQP Site Link</u>**: https://www.waterqualitydata.us/
+  
+- **<u>Summary</u>**:
   The Water Quality Portal (WQP) is a cooperative service sponsored by the United States Geological Survey (USGS), the Environmental Protection Agency (EPA), and the National Water Quality Monitoring Council (NWQMC). It serves data collected by over 400 state, federal, tribal, and local agencies: https://www.waterqualitydata.us/. The data include information on sites where data are gathered, physical/chemical monitoring data, and biological sample data. Complete metadata are available here: https://www.waterqualitydata.us/portal_userguide/
-- <u>Data:</u>
+- **<u>Data</u>**:
   - Complete web services documentation: https://www.waterqualitydata.us/webservices_documentation/
 - Code examples: 
   * `USWQP/USWaterData-Scrape.Rmd` uses the WQP web service to pull station data for all sites in California (N = 336801). 
@@ -140,9 +142,10 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
   - Monitors all large PWSs (>10,000), all small PWSs (3,300-10,000), and a representative sample of small PWSs (<3,300).
   - Contains disinfectant type and treatment information useful info to match by PWSID and merge with data from SDWIS and SYR. Disinfectant Residual (e.g. Free Chlorine, Chloramine) and treatment information (e.g. GAC, Ionic exchange, etc.) only available UCMR4 onwards.
 
-- <u>Link</u>: https://www.epa.gov/dwucmr
-- <u>Summary</u>: EPA uses the Unregulated Contaminant Monitoring Rule (UCMR) to collect data for contaminants suspected to be present in drinking water, but that do not have regulatory standards set under the Safe Drinking Water Act (SDWA). The monitoring provides EPA and other interested parties with nationally representative data on the occurrence of contaminants in drinking water, the number of people potentially being exposed, and an estimate of the levels of that exposure. These data can support future regulatory determinations and other actions to protect public health. 
-- <u>Data</u>:
+- **<u>Main UCMR Site Link</u>**: https://www.epa.gov/dwucmr
+  
+- **<u>Summary</u>**: EPA uses the Unregulated Contaminant Monitoring Rule (UCMR) to collect data for contaminants suspected to be present in drinking water, but that do not have regulatory standards set under the Safe Drinking Water Act (SDWA). The monitoring provides EPA and other interested parties with nationally representative data on the occurrence of contaminants in drinking water, the number of people potentially being exposed, and an estimate of the levels of that exposure. These data can support future regulatory determinations and other actions to protect public health. 
+- **<u>Data</u>**:
     - Unregulated Contaminant Occurence data: https://www.epa.gov/dwucmr/occurrence-data-unregulated-contaminant-monitoring-rule
    
 - <u>Code examples</u>: None
@@ -151,25 +154,20 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
 ### F. USEPA IRIS Information
 
 - **<u>Overview</u>**: Good for toxicity information
-  - "What is the toxicity? (IRIS database contains the toxicology data used in setting the MCL)"
 
-- Integrated Risk Information System <u>Link</u>:  https://www.epa.gov/iris
-- <u>Summary</u>: IRIS assessments provide the following toxicity values for health effects resulting from chronic exposure to chemicals. These values include the oral reference dose (RfD) and other data used in setting each contaminant's Maximum Contaminant Level (MCL). EPA's risk management decision is a function of the MCL, which in turn is based upon IRIS data.
-- <u>Data</u>:
+- **<u>Main IRIS Site Link</u>**:  https://www.epa.gov/iris
+  
+- **<u>Summary</u>**: "What is the toxicity?" The Integrated Risk Information System (IRIS) database contains the toxicology data used in setting the MCL. IRIS assessments provide the toxicity values for health effects resulting from chronic exposure to chemicals. These values include the oral reference dose (RfD) and other data used to assess the chemical. EPA's risk management decision is a function of the MCL, which in turn is based upon IRIS data.
+- **<u>Data</u>**:
     - IRIS Assessments: https://iris.epa.gov/AtoZ/?list_type=erd (documentation evaluating the health implications, chemical composition, toxicity profile, and reference dose associated with a specific contaminant)
-    - Chemical Toxicity Dashboard: https://comptox.epa.gov/dashboard/ (A dashboard for chemical toxicity)
-    - More on regulations:
-    - National Primary Drinking Water Regulations: https://www.epa.gov/ground-water-and-drinking-water/national-primary-drinking-water-regulations
-    - National Primary Drinking Water Regulation Table (link to download PDF): https://www.epa.gov/ground-water-and-drinking-water/national-primary-drinking-water-regulation-table (A table of drinking water MCLs)
-    - Regulation Timeline under SDWA (link to download PDF): https://www.epa.gov/sdwa/regulation-timeline-contaminants-regulated-under-safe-drinking-water-act
+    - Chemical Toxicity Dashboard: https://comptox.epa.gov/dashboard/ (A dashboard for chemical toxicity) 
    
 - <u>Code examples</u>: None
-
 
 ### G. Other Useful Database
 - **<u>Overview</u>**: Good for Geographic & Demographic Information
 
-- <u>Summary</u>: Information can be combined with water quality data and mapped with GIS.
+- **<u>Summary</u>**: Information can be combined with water quality data and mapped with GIS.
     - ECHO Drinking Water Data Downloads: https://echo.epa.gov/tools/data-downloads/sdwa-download-summary contains PWS address information that can be geocoded using GIS
     - ECHO Facility Demographic: https://echo.epa.gov/tools/data-downloads/demographic-download-summary for income and census data
     - UCB: https://data.census.gov/table to explore census tables which can be downloaded
@@ -202,32 +200,33 @@ lat_longs <- some_addresses %>%
 ---
 
 ## II. State Data Sources
-Analyze Trends: EPA/State Drinking Water Dashboard
+**EPA/State Drinking Water Dashboard** (Analyze Statewide Trends)
 * <u>Link</u>: https://echo.epa.gov/trends/comparative-maps-dashboards/drinking-water-dashboard
 
-Alaska Drinking Water Watch
+**Alaska Drinking Water Watch**
 * <u>Link</u>: https://dec.alaska.gov/DWW/
 
-California Drinking Water Watch
+**California Drinking Water Watch**
 * <u>Link</u>: https://www.waterboards.ca.gov/resources/data_databases/
 * <u>Link</u>: https://sdwis.waterboards.ca.gov/PDWW/
 
-Indiana Drinking Water Watch (can select "sample point type" to identify distribution systems or entry point ID)
+**Indiana Drinking Water Watch** (can select "sample point type" to identify distribution systems or entry point ID)
 * <u>Link</u>: https://indwv.gecsws.com/
   
-Louisiana Drinking Water Watch (can select "sample point type" to identify distribution systems or entry point ID)
+**Louisiana Drinking Water Watch** (can select "sample point type" to identify distribution systems or entry point ID)
 * <u>Link</u>: https://sdw.ldh.la.gov/DWW/
 
-New Jersey Drinking Water Watch
+**New Jersey Drinking Water Watch**
 * <u>Link</u>: https://www9.state.nj.us/DEP_WaterWatch_public/
 
-North Carolina Drinking Water Watch
+**North Carolina Drinking Water Watch**
 * <u>Link</u>: https://www.pwss.enr.state.nc.us/NCDWW2/
 
-Texas Drinking Water Watch
+**Texas Drinking Water Watch**
 * <u>Link</u>: https://www.tceq.texas.gov/agency/water_main.html
 * <u>Link</u>: https://dww2.tceq.texas.gov/DWW/
 
+*Most, if not all, states will have their own version of the drinking water watch dashboard for state specific monitoring.*
 
 
 ---
@@ -240,15 +239,14 @@ Texas Drinking Water Watch
 
 ### Drinking Water Regulations
 * <u>How EPA Regulates Drinking Water Contaminants</u>: https://www.epa.gov/sdwa/how-epa-regulates-drinking-water-contaminants 
-* <u>MCL Table</u>: https://www.epa.gov/ground-water-and-drinking-water/national-primary-drinking-water-regulation-table
+* <u>National Primary Drinking Water Regulation Table</u>: https://www.epa.gov/ground-water-and-drinking-water/national-primary-drinking-water-regulation-table (A table of drinking water MCLs)
 
 **<u>SDWA Rules and enforcement dates</u>**: contains drinking water rule pages which states the enforcement dates of each rule grouped by contaminant type. 
-- <u>Summary</u>: The EPA regulates over 90 contaminants in drinking water, setting limits to protect health and ensure water systems can comply using current technology. The Safe Drinking Water Act allows states to enforce their own standards, provided they are as strict as the EPA's.
-	- <u>NPDWR DW Regulations</u>: https://www.epa.gov/ground-water-and-drinking-water/national-primary-drinking-water-regulations 
- 	- <u>NPDWR GW and DW Regulations</u>: https://www.epa.gov/dwreginfo/drinking-water-regulations
-    - Some SDWA rule names and enforcement dates: Arsenic, Arsenic Rule (2006); GWR, Ground Water Rule (2009); IESW, Interim Enhanced SurfaceWater Treatment Rule(2002); LCR, Lead and Copper Rule (1992); LT1ESW, Long Term 1 Enhanced Surface Water Treatment Rule (2005); NIPDWR, National Interim Primary Drinking Water Regulations (1977); Phase I Rule (1989); Phase II Rule (1992); PhaseV Rule (1994); Radionuclides, Radionuclides Rule (2003); RLCR, Revised Lead and Copper Rule (2007); RTCR, Revised Total Coliform Rule (2016); Stage 1 DBPs, Stage 1 Disinfectants and Disinfection By-productsRule (2002–2004); Stage 2 DBPs, Stage 2 Disinfectants and Disinfection By-products Rule (2012–2013); SWTR, Surface Water Treatment Rule (1993); TCR, Total Coliform Rule (1990); and Trihalomethanes, Total Trihalomethanes (1981–1983).
-    	- <u>Regulation Timeline under the SDWA</u>: https://www.epa.gov/sdwa/regulation-timeline-contaminants-regulated-under-safe-drinking-water-act <br />
-    - Two important dates: When the EPA adopts a new standard for contaminants in drinking water, such as reducing the arsenic MCL from 50 ppb to 10 ppb on January 22, 2001, it also sets a compliance deadline for water utilities, which, in this case, was January 23, 2006. This gives utilities time to adjust their systems to meet the new requirements. When performing timeseries analysis, must decide on which of the two dates to use.
+- **<u>Summary</u>**: The EPA regulates over 90 contaminants in drinking water, setting limits to protect health and ensure water systems can comply using current technology. The Safe Drinking Water Act allows states to enforce their own standards, provided they are as strict as the EPA's.
+    - <u>NPDWR Groundwater and Drinking Water Regulations</u>: https://www.epa.gov/ground-water-and-drinking-water/national-primary-drinking-water-regulations 
+    - <u>Regulation Timeline under the SDWA</u>: https://www.epa.gov/sdwa/regulation-timeline-contaminants-regulated-under-safe-drinking-water-act <br />
+        - Some SDWA rule names and enforcement dates: Arsenic, Arsenic Rule (2006); GWR, Ground Water Rule (2009); IESW, Interim Enhanced SurfaceWater Treatment Rule(2002); LCR, Lead and Copper Rule (1992); LT1ESW, Long Term 1 Enhanced Surface Water Treatment Rule (2005); NIPDWR, National Interim Primary Drinking Water Regulations (1977); Phase I Rule (1989); Phase II Rule (1992); PhaseV Rule (1994); Radionuclides, Radionuclides Rule (2003); RLCR, Revised Lead and Copper Rule (2007); RTCR, Revised Total Coliform Rule (2016); Stage 1 DBPs, Stage 1 Disinfectants and Disinfection By-productsRule (2002–2004); Stage 2 DBPs, Stage 2 Disinfectants and Disinfection By-products Rule (2012–2013); SWTR, Surface Water Treatment Rule (1993); TCR, Total Coliform Rule (1990); and Trihalomethanes, Total Trihalomethanes (1981–1983).
+    - Two *important dates* to note: When the EPA adopts a new standard for contaminants in drinking water, such as reducing the arsenic MCL from 50 ppb to 10 ppb on January 22, 2001, it also sets a compliance deadline for water utilities, which, in this case, was January 23, 2006. This gives utilities time to adjust their systems to meet the new requirements. When performing timeseries analysis, must decide on which of the two dates to use.
    - Every five years EPA reviews the list of contaminants, largely based on the Contaminant Candidate List (CCL), then list and collect monitoring data for up to 30 contaminants (UCMR), then determine whether at least five need a drinking water standard (Regulatory Determinations), if yes, then develop or revise the drinking water standard (Regulation Devlopment), then collect Six-Year Review data review and decide whether to revise the standard (SYR). 
 
 **<u>More readings</u>**: 
@@ -280,7 +278,7 @@ Texas Drinking Water Watch
 * 5 = Very large >100,000
 
 ### US EPA Regional Offices
-- <u>Summary</u>: EPA has ten Regional offices, each responsible for execution of their programs within several states and territories.
+- **<u>Summary</u>**: EPA has ten Regional offices, each responsible for execution of their programs within several states and territories.
 - <u>Link to image source and to get more information</u>: [EPA Regional and Geographic Offices](https://www.epa.gov/aboutepa/regional-and-geographic-offices) <br /> <br />
 
 ![](images/usepa-regions.png)
