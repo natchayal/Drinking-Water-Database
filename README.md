@@ -27,7 +27,7 @@ While this represents a number of useful sites, it's certainly not exhaustive.
 ## [Overview of Regulatory Development Processes](https://www.epa.gov/sdwa/sdwa-evaluation-and-rulemaking-process)
 ![](images/flowsheet_sdwa_regulatory_process.png)
 
-The [Contaminant Candidate List (CCL)](#f-usepa-contaminant-candidate-list-ccl) is the starting point of EPA's regulatory development process. Every 5 years, EPA is required by the Safe Drinking Water Act (SDWA) to publish a new list of CCL to determine which unregulated contaminants to monitor for under EPA's [Unregulated Monitoring Program (UCMR)](#f-unregulated-contaminant-monitoring-rule-ucmr). UCMRs are limited to no more than 30 contaminants (every five years), and the monitoring is required for all large public water systems (PWSs) that serve more than 10,000 people, all small PWSs serving between 3,300 and 10,000 people, and a representative sample of small PWSs serving fewer than 3,300 people. 
+The [Contaminant Candidate List (CCL)](#f-usepa-contaminant-candidate-list-ccl) is the starting point of EPA's regulatory development process. Every 5 years, EPA is required by the Safe Drinking Water Act (SDWA) to publish a new list of CCL to determine which unregulated contaminants to monitor for under EPA's [Unregulated Monitoring Program (UCMR)](#e-unregulated-contaminant-monitoring-rule-ucmr). UCMRs are limited to no more than 30 contaminants (every five years), and the monitoring is required for all large public water systems (PWSs) that serve more than 10,000 people, all small PWSs serving between 3,300 and 10,000 people, and a representative sample of small PWSs serving fewer than 3,300 people. 
 
 UCMR data are then used to make regulatory determinations of whether to develop a [National Primary Drinking Water Regulation (NPWDR)](#drinking-water-regulations) for a contaminant. The SDWA requires EPA to make regulatory determinations for at least five contaminants on the CCL. During the final round of decisions which evaluates the final CCL list and UCMR results, EPA can decide to regulate or not to regulate the contaminants from the final CCL list. SDWA specifies three criteria that must be met in order for the development of a national regulation (1. Contaminant has adverse health effects on people, 2. Contaminant known to occur/substantial likelihood to occur in a PWS at frequency and level of concern, 3. Regulation of contaminant presents meaningful opportunity to reduce health risks for populations served by public water). There can be delays if additional data needs to be considered to decide whether the contaminant satisfies all three criteria, and the interpretation of the words in criteria can influence what action is taken. 
 
@@ -160,7 +160,7 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
   * `USWQP/USWaterData-Explore.Rmd` provides and example for ingesting and visualizing the US Water Quality Portal data scraped for California. 
 
 
-### F. Unregulated Contaminant Monitoring Rule (UCMR)
+### E. Unregulated Contaminant Monitoring Rule (UCMR)
 
 - **<u>Overview</u>**: Only place to get data on unregulated contaminants
   - The 1996 Safe Drinking Water Act (SDWA) amendments require that once every five years EPA issue a new Contaminant Candidate List (CCL) of no more than 30 unregulated contaminants to be monitored by public water systems (PWSs).
