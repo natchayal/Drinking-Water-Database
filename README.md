@@ -35,7 +35,7 @@ Once the EPA has made the determination to issue a NPWDR, EPA has 24 months to d
 
 EPA reviews all existing regulations every six years ([Six-Year Review](#c-usepa-six-year-review-syr)) for evaluation of new data to assess whether a regulation needs to be revised. 
 
-Summary adapted from [asdwa.org](https://www.asdwa.org/sdwa-regulatory-development-process/), which give a pretty good summary of the process.
+Summary adapted from [asdwa.org](https://www.asdwa.org/sdwa-regulatory-development-process/), which gives a pretty good summary of the processes.
 
 ---
 ## [Setting an MCL and MCLG](https://www.epa.gov/iris/reference-dose-rfd-description-and-use-health-risk-assessments)
