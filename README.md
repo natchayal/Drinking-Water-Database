@@ -42,10 +42,10 @@ Summary adapted from [asdwa.org](https://www.asdwa.org/sdwa-regulatory-developme
 ![](images/regulation_development.png)
 
 Once the Maximum Contaminant Level Goal (MCLG) is determined, EPA sets an enforceable standard. In most cases, the standard is an MCL. The MCL is set as close to the MCLG as feasible. Taking cost into consideration, EPA must determine the feasible MCL. This is defined by the Federal SDWA as the level that may be achieved with:
-  - use of the best available technology or treatment approaches
+  - use of the best available technology or treatment approaches.
   - other means which EPA finds are available (after examination for efficiency under field conditions, not solely under laboratory conditions).
 
-See [IRIS Section](#g-usepa-iris-information)
+See [USEPA IRIS Information](#g-usepa-iris-information) and [Drinking Water Treatment Technologies](#i-drinking-water-treatment-technologies) section.
 
 ---
 ## I. National Data Sources
@@ -205,7 +205,16 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
    
 - <u>Code examples</u>: None
 
-### H. Other Useful Database
+
+### I. Drinking Water Treatment Technologies
+- **<u>Overview</u>**: Great. Provides current treatment technology and unit cost models.
+
+- **<u>Summary</u>**: EPA provides a list of available technology or treatment approaches for cities and towns to consider in order to decide and select what's the best drinking water treatment systems for the community.
+    - Drinking Water Technologies: https://www.epa.gov/ground-water-and-drinking-water/drinking-water-technologies
+    - Overview of Drinking Water Treatment Technologies: https://www.epa.gov/sdwa/overview-drinking-water-treatment-technologies (provides an overview of all drinking water treatment technologies, advantages and disadvantages)
+    - Drinking Water Treatment Technology Unit Cost Models: https://www.epa.gov/sdwa/drinking-water-treatment-technology-unit-cost-models (provides work breakdown structure (WBS) .xlsm file developed by EPA to help estimate cost of available technology)
+
+### I. Other Useful Database
 - **<u>Overview</u>**: Good for Geographic & Demographic Information
 
 - **<u>Summary</u>**: Information can be combined with water quality data and mapped with GIS.
