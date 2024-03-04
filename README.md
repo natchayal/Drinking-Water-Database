@@ -19,6 +19,7 @@ While this represents a number of useful sites, it's certainly not exhaustive.
 | EPA             | [USEPA Six Year Review](https://www.epa.gov/dwsixyearreview) |       💧💧💧💧       |     💧💧💧💧      | Data rich, easy to scrape or download as .zip file. <br />Reports National occurence for each contaminant (not just the violations). <br />Updated every 6 years.  |
 | USGS/EPA        | [Water Quality Portal](https://www.waterqualitydata.us/)     |     💧💧💧💧💧      |    💧💧💧💧💧     | Well organized & comprehensive data.                |
 | EPA | [Unregulated Contaminant Monitoring Rule (UCMR)](https://www.epa.gov/dwucmr) |     💧💧💧💧💧      |    💧💧     | Occurrence on unregulated contaminants. Easy to download as .zip file. <br />Reports disinfection type, residual, and treatment info. <br />Updated every 5 years.    
+| EPA | [Contaminant Candidate List (CCL)](https://www.epa.gov/ccl) |     💧💧💧💧💧      |    💧     | Lists unregulated contaminants to be submitted as candidates for regulatory determinations. <br />Updated every 5 years.
 | EPA | [USEPA IRIS Information](https://www.epa.gov/iris) |     💧💧💧💧💧      |    💧     | Concentration on drinking (oral) route of exposure, not air. Download [NPDWR MCL table](https://www.epa.gov/sites/default/files/2016-06/documents/npwdr_complete_table.pdf) as .pdf. <br />Info on Toxicology data used for setting Maximum Contaminant Level (MCL).                        |
 | EPA | [Drinking Water Regulations](https://www.epa.gov/dwreginfo/drinking-water-regulations) |       💧💧💧💧💧       |    💧     | SDWA rules and enforcement dates. Download [Regulation Timeline](https://www.epa.gov/sites/default/files/2015-10/documents/dw_regulation_timeline.pdf) as .pdf.      
 
@@ -150,8 +151,20 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
    
 - <u>Code examples</u>: None
 
+### F. USEPA Contaminant Candidate List (CCL) 
+- **<u>Overview</u>**: EPA issue a new Contaminant Candidate List (CCL) of no more than 30 unregulated contaminants to be monitored by public water systems (PWSs)
+  - Developed in coordination with the UCMR. 
+  
+- **<u>Main CCL Site Link</u>**: https://www.epa.gov/ccl
+  
+- **<u>Summary</u>**: EPA uses the Unregulated Contaminant Monitoring Rule (UCMR) to collect data for contaminants suspected to be present in drinking water, but that do not have regulatory standards set under the Safe Drinking Water Act (SDWA). The monitoring provides EPA and other interested parties with nationally representative data on the occurrence of contaminants in drinking water, the number of people potentially being exposed, and an estimate of the levels of that exposure. These data can support future regulatory determinations and other actions to protect public health.  A regulatory determination is a formal decision on whether EPA should initiate a process to develop a national primary drinking water regulation for a specific contaminant.
+- **<u>Data</u>**:
+    - Contaminant Candidate List: https://www.epa.gov/ccl
+    - Basic information about the CCL: https://www.epa.gov/ccl/basic-information-ccl-and-regulatory-determination
+    - Basic information about Regulatory Determination: https://www.epa.gov/Node/51883
 
-### F. USEPA IRIS Information
+      
+### G. USEPA IRIS Information
 
 - **<u>Overview</u>**: Good for toxicity information
 
@@ -164,7 +177,7 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
    
 - <u>Code examples</u>: None
 
-### G. Other Useful Database
+### H. Other Useful Database
 - **<u>Overview</u>**: Good for Geographic & Demographic Information
 
 - **<u>Summary</u>**: Information can be combined with water quality data and mapped with GIS.
