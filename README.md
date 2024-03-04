@@ -317,10 +317,14 @@ lat_longs <- some_addresses %>%
 - Source: https://dec.alaska.gov/dww/Help/html_Type_of_Sampling_Point.htm
 
 ### Classifications
+A **public water system (PWS)** must have at least 15 service connections or serves an average of at least 25 people for at least 60 days a year. It can be publicly or privately owned.
+
 EPA has defined three types of [public water systems](https://www.epa.gov/dwreginfo/information-about-public-water-systems):
-* **<u>Community Water System (CWS)</u>**: A public water system that supplies water to the same population year-round.
-* **<u>Non-Transient Non-Community Water System (NTNCWS)</u>**: A public water system that regularly supplies water to at least 25 of the same people at least six months per year. Some examples are schools, factories, office buildings, and hospitals which have their own water systems.
-* **<u>Transient Non-Community Water System (TNCWS)</u>**: A public water system that provides water in a place such as a gas station or campground where people do not remain for long periods of time.
+* **<u>_Community Water System_ (CWS)</u>**: A public water system that supplies water to the same population year-round.
+* **<u>_Non-Transient Non-Community Water System_ (NTNCWS)</u>**: A public water system that regularly supplies water to at least 25 of the same people at least six months per year. Some examples are schools, factories, office buildings, and hospitals which have their own water systems.
+* **<u>_Transient Non-Community Water System_ (TNCWS)</u>**: A public water system that provides water in a place such as a gas station or campground where people do not remain for long periods of time.
+
+There are over 148,000 public water systems in the United States.
 
 ### Size category (based on people served by the system)
 **<u>Size category</u>** (based on people served by the system)
