@@ -199,7 +199,7 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
 - **<u>Summary</u>**: "What is the toxicity?" The Integrated Risk Information System (IRIS) database contains the toxicology data used in setting the MCL. IRIS assessments provide the toxicity values for health effects resulting from chronic exposure to chemicals. These values include the oral reference dose (RfD) and other data used to assess the chemical. EPA's risk management decision is a function of the MCL, which in turn is based upon IRIS data.
 - **<u>Data</u>**:
     - IRIS Assessments: https://iris.epa.gov/AtoZ/?list_type=erd (documentation evaluating the health implications, chemical composition, toxicity profile, and reference dose associated with a specific contaminant)
-    - Chemical Toxicity Dashboard: https://comptox.epa.gov/dashboard/ (a dashboard for chemical toxicity, enter chemical name and check out 'Executive Summary' tab)
+    - Chemical Toxicity Dashboard: https://comptox.epa.gov/dashboard/ (a dashboard for chemical toxicity and RfD, enter chemical name and check out *Executive Summary* tab. Here's an example for [Arsenic](https://comptox.epa.gov/dashboard/chemical/executive-summary/DTXSID4023886))
     - IRIS Glossary: https://www.epa.gov/iris/iris-glossary
     - Reference Dose (RfD) Description and Use in Health Risk Assessments: https://www.epa.gov/iris/reference-dose-rfd-description-and-use-health-risk-assessments
    
