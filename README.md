@@ -15,12 +15,12 @@ While this represents a number of useful sites, it's certainly not exhaustive.
 | Source          | Dataset                                                      | Ease of Access | Data Utility | Comments                                                 |
 | --------------- | ------------------------------------------------------------ | :------------: | :----------: | -------------------------------------------------------- |
 | EPA             | [Safe Drinking Water Information System (SDWIS)]( https://ofmpub.epa.gov/apex/sfdw/f?p=108:1:0::NO:1) |       💧💧💧💧       |     💧💧💧      | Limited data, easy to scrape with R. <br />Can get violation data, treatment, water system detail, and purchaser-seller info. Overlaps with ECHO. <br />*Updated quarterly*.                            |                              |
-| EPA             | [Enforcement & Compliance History Online (ECHO)](https://echo.epa.gov/) |      💧💧💧      |    💧💧💧💧💧     | Good, but so much data it's hard to know what's what. <br />See [Drinking Water Dashboard](https://echo.epa.gov/trends/comparative-maps-dashboards/drinking-water-dashboard) for overview of SDWA regulatory activities.     |
-| EPA             | [USEPA Six Year Review](https://www.epa.gov/dwsixyearreview) |       💧💧💧💧       |     💧💧💧💧      | Data rich, easy to scrape or download as .zip file. <br />Reports National occurence for each contaminant (not just the violations). <br />*Updated every 6 years*.  |
+| EPA             | [Enforcement & Compliance History Online (ECHO)](https://echo.epa.gov/) |      💧💧💧      |    💧💧💧💧💧     | Good, but so much data it's hard to know what's what. <br />See [Drinking Water Dashboard](https://echo.epa.gov/trends/comparative-maps-dashboards/drinking-water-dashboard) for overview of SDWA regulatory activities. Extensive info on utility and contacts. <br />Download latest [Utility Meta data](https://echo.epa.gov/files/echodownloads/SDWA_latest_downloads.zip) as .zip.     |
+| EPA             | [USEPA Six Year Review](https://www.epa.gov/dwsixyearreview) |       💧💧💧💧       |     💧💧💧💧      | Data rich, easy to scrape or download as .zip file. <br />Reports National occurence for each contaminant with PWS info (not just the violations). <br />*Updated every 6 years*.  |
 | USGS/EPA        | [Water Quality Portal](https://www.waterqualitydata.us/)     |     💧💧💧💧💧      |    💧💧💧💧💧     | Well organized & comprehensive data.                |
 | EPA | [Unregulated Contaminant Monitoring Rule (UCMR)](https://www.epa.gov/dwucmr) |     💧💧💧💧💧      |    💧💧     | Occurrence on unregulated contaminants. Easy to download as .zip file. <br />Reports disinfection type, residual, and treatment info. <br />*Updated every 5 years*.    
 | EPA | [Contaminant Candidate List (CCL)](https://www.epa.gov/ccl) |     💧💧💧💧💧      |    💧     | Lists unregulated contaminants to be submitted as candidates for regulatory determinations. <br />*Updated every 5 years*.
-| EPA | [USEPA IRIS Information](https://www.epa.gov/iris) |     💧💧💧💧💧      |    💧     | Concentration on drinking (oral) route of exposure, not air. Download [NPDWR MCL table](https://www.epa.gov/sites/default/files/2016-06/documents/npwdr_complete_table.pdf) as .pdf. <br />Info on Toxicology data used for setting Maximum Contaminant Level (MCL).                        |
+| EPA | [USEPA IRIS Information](https://www.epa.gov/iris) |     💧💧💧💧💧      |    💧     | Concentration on drinking (oral) route of exposure, not air. Download [NPDWR MCL table](https://www.epa.gov/sites/default/files/2016-06/documents/npwdr_complete_table.pdf) as .pdf. <br />See [IRIS Assessments](https://iris.epa.gov/AtoZ/?list_type=erd) for info on Toxicology data used for setting Maximum Contaminant Level (MCL).                       |
 | EPA | [Drinking Water Regulations](https://www.epa.gov/dwreginfo/drinking-water-regulations) |       💧💧💧💧💧       |    💧     | SDWA rules and enforcement dates. Download [Regulation Timeline](https://www.epa.gov/sites/default/files/2015-10/documents/dw_regulation_timeline.pdf) as .pdf.      
 
 ---
@@ -47,7 +47,7 @@ While this represents a number of useful sites, it's certainly not exhaustive.
     - By **interactive map** (EASY) - The data is available from here, in limited capacity: https://www.epa.gov/enviro/sdwis-search
     	- SDWIS Search by: 'Select a geographic area' or 'Enter the water system ID number' (PWSID for tribal agencies will have region code instead of state code as prefix)
     - By using the **SDWIS Federal Reports Advanced Search tool** (BETTER) - select data of interest and export report as a .csv file, use this link: https://ofmpub.epa.gov/apex/sfdw/f?p=108:1:0::NO:1 ; data only goes back 10 years; to get older records use R to scrape, see below.
-    	- A full description of violation and contaminant codes can be accessed in the SDWA_REF_CODE_VALUES.csv of https://echo.epa.gov/files/echodownloads/SDWA_latest_downloads.zip
+    	- A full description of violation and contaminant codes can be accessed in the SDWA_REF_CODE_VALUES.csv of https://echo.epa.gov/files/echodownloads/SDWA_latest_downloads.zip ECHO site.
     
     - By using **R to scrape data** (BEST!) - R script is based on the info contained here: https://www.epa.gov/enviro/web-services and https://www.epa.gov/enviro/envirofacts-data-service-api
       - Then need to scrape sub-tables.
@@ -87,8 +87,11 @@ Note: When analyzing violations, it may be more beneficial to count Public Water
   
 - **<u>Summary</u>**: Provides compliance and enforcement information for over 900,000 regulated facilities nationwide. Allows query at state/county/city/zip level for a table of facilities and their compliance records. Not limited to water (NPDES and drinking water); includes air, hazardous waste,...
 - **<u>Data</u>**:
-  - Main pages searches by form. Not REST interface. CSV's generated with temporary link. 	
-  - Download utility meta data as ZIP file: https://echo.epa.gov/files/echodownloads/SDWA_latest_downloads.zip Containes files including spreadsheet with contaminant code and violation code references, for example:
+  - Main pages searches by form. Not REST interface. CSV's generated with temporary link.
+  - While in https://echo.epa.gov/tools/data-downloads#downloads, scroll down to "Drinking Water Data Downloads" and download "SDWA Dataset (ZIP)" 
+  	- Direct link to download SDWA Dataset (ZIP) which provides utility meta data: https://echo.epa.gov/files/echodownloads/SDWA_latest_downloads.zip
+  - SDWA Dataset (ZIP) contains files including a spreadsheet with PWS sysem info, contact: name/email/cell which can be useful for utility data requests!, address, source, size, etc. (SDWA_PUB_WATER_SYSTEMS.CSV), purchaser-seller info for each PWSID (SDWA_FACILITIES.CSV), and many more!
+  - Also contains contaminant code and violation code references (SDWA_REF_CODE_VALUES.CSV), for example:
     -  Contaminant Code: Nitrate (1040), TCR (3100) and RTCR (8000), HAA5 (2456), TTHMs (2950);
     -  Violation Code: Average (02) and Single Sample (01) Maximum Contaminant Level Violation; Monitoring, Regular (03) and Monitoring, Check/Repeat/Confirmation (04) Violation
   - More info about ZIP file from Drinking Water Data Downloads: https://echo.epa.gov/tools/data-downloads/sdwa-download-summary contains facility information from SDWIS database (includes: Events, Facility, Geograhic Area, Violations and Enforcement, and PWS address information that can be geocoded using GIS!)
@@ -100,9 +103,10 @@ Note: When analyzing violations, it may be more beneficial to count Public Water
 ### C. USEPA Six Year Review (SYR)
 
 - <u>**Overview**</u>: Data rich, easy to scrape, and contains occurence and contaminant level data (not just the violations!)
-  - Updated every 6 years 
-  - Does not contain system information
-  - Can link with SDWIS database by matching PWSID to get more system information
+  - Updated every 6 years. 
+  - Contains system info such as PWSID, system type, serving size, source water type, sampling location, treatment info, etc.
+  - Dataset must be downloaded individually as Zip Files (grouped by category).
+  - Can link with SDWIS database by matching PWSID to get more system information.
 
 - **<u>SYR home page</u>**: https://www.epa.gov/dwsixyearreview
 
@@ -130,6 +134,7 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
   The Water Quality Portal (WQP) is a cooperative service sponsored by the United States Geological Survey (USGS), the Environmental Protection Agency (EPA), and the National Water Quality Monitoring Council (NWQMC). It serves data collected by over 400 state, federal, tribal, and local agencies: https://www.waterqualitydata.us/. The data include information on sites where data are gathered, physical/chemical monitoring data, and biological sample data. Complete metadata are available here: https://www.waterqualitydata.us/portal_userguide/
 - **<u>Data</u>**:
   - Complete web services documentation: https://www.waterqualitydata.us/webservices_documentation/
+  - Other Water Quality Portals: https://www.waterqualitydata.us/other_portal_links/
 - Code examples: 
   * `USWQP/USWaterData-Scrape.Rmd` uses the WQP web service to pull station data for all sites in California (N = 336801). 
   * `USWQP/USWaterData-Explore.Rmd` provides and example for ingesting and visualizing the US Water Quality Portal data scraped for California. 
@@ -142,6 +147,7 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
   - The UCMR program was developed in coordination with the CCL.
   - Monitors all large PWSs (>10,000), all small PWSs (3,300-10,000), and a representative sample of small PWSs (<3,300).
   - Contains disinfectant type and treatment information useful info to match by PWSID and merge with data from SDWIS and SYR. Disinfectant Residual (e.g. Free Chlorine, Chloramine) and treatment information (e.g. GAC, Ionic exchange, etc.) only available UCMR4 onwards.
+  - Currently the only source known to have disinfectant type explicitly reported as a column in dataset.
 
 - **<u>UCMR home page</u>**: https://www.epa.gov/dwucmr
   
