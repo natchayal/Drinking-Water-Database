@@ -38,7 +38,7 @@ While this represents a number of useful sites, it's certainly not exhaustive.
   - Possibly redundant with ECHO. 
   - Queries must be done iteratively with R. Server is often down.
 
-- **<u>Main SDWIS Site Link</u>**: https://www.epa.gov/enviro/topic-searches#water 
+- **<u>SDWIS home page</u>**: https://www.epa.gov/enviro/topic-searches#water 
 
 - **<u>Summary</u>**: SDWIS tracks information on drinking water contamination levels as required by the 1974 Safe Drinking Water Act and its 1986 and 1996 amendments. Provides data on violations and enforcement history since 1993 of the EPA's drinking water regulations. 
 
@@ -83,7 +83,7 @@ Note: When analyzing violations, it may be more beneficial to count Public Water
     - Water Facility: https://enviro.epa.gov/envirofacts/sdwis/search
     - The EPA/State Drinking Water Dashboard: https://echo.epa.gov/trends/comparative-maps-dashboards/drinking-water-dashboard (quick view of violation trend)
 
-- **<u>Main ECHO Site Link</u>**: https://echo.epa.gov/
+- **<u>ECHO home page</u>**: https://echo.epa.gov/
   
 - **<u>Summary</u>**: Provides compliance and enforcement information for over 900,000 regulated facilities nationwide. Allows query at state/county/city/zip level for a table of facilities and their compliance records. Not limited to water (NPDES and drinking water); includes air, hazardous waste,...
 - **<u>Data</u>**:
@@ -104,7 +104,7 @@ Note: When analyzing violations, it may be more beneficial to count Public Water
   - Does not contain system information
   - Can link with SDWIS database by matching PWSID to get more system information
 
-- **<u>Main SYR Site Link</u>**: https://www.epa.gov/dwsixyearreview
+- **<u>SYR home page</u>**: https://www.epa.gov/dwsixyearreview
 
 - **<u>Summary</u>**: The Safe Drinking Water Act (SDWA) requires EPA to review each national primary drinking water regulation at least once every six years and revise them, if appropriate. As part of the "Six-Year Review," EPA evaluates any newly available data, information and technologies to determine if any regulatory revisions are needed. Revisions must maintain or strengthen public health protection.
 
@@ -143,7 +143,7 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
   - Monitors all large PWSs (>10,000), all small PWSs (3,300-10,000), and a representative sample of small PWSs (<3,300).
   - Contains disinfectant type and treatment information useful info to match by PWSID and merge with data from SDWIS and SYR. Disinfectant Residual (e.g. Free Chlorine, Chloramine) and treatment information (e.g. GAC, Ionic exchange, etc.) only available UCMR4 onwards.
 
-- **<u>Main UCMR Site Link</u>**: https://www.epa.gov/dwucmr
+- **<u>UCMR home page</u>**: https://www.epa.gov/dwucmr
   
 - **<u>Summary</u>**: EPA uses the Unregulated Contaminant Monitoring Rule (UCMR) to collect data for contaminants suspected to be present in drinking water, but that do not have regulatory standards set under the Safe Drinking Water Act (SDWA). The monitoring provides EPA and other interested parties with nationally representative data on the occurrence of contaminants in drinking water, the number of people potentially being exposed, and an estimate of the levels of that exposure. These data can support future regulatory determinations and other actions to protect public health. 
 - **<u>Data</u>**:
@@ -152,12 +152,12 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
 - <u>Code examples</u>: None
 
 ### F. USEPA Contaminant Candidate List (CCL) 
-- **<u>Overview</u>**: EPA issue a new Contaminant Candidate List (CCL) of no more than 30 unregulated contaminants to be monitored by public water systems (PWSs)
+- **<u>Overview</u>**: Only place to get a list of drinking water contaminants that are not currently subject to EPA drinking water regulations but under surveillance for potential future regulation.
+  
+- **<u>CCL home page</u>**: https://www.epa.gov/ccl
+  
+- **<u>Summary</u>**: EPA issues a new Contaminant Candidate List (CCL) every five years, serving as the first level of evaluation for unregulated drinking water contaminants if it presents a public health risk. Contaminants listed on the CCL may require future regulation under the Safe Drinking Water Act (SDWA). The SDWA requires EPA to periodically decide whether or not to regulate at least five contaminants on the Contaminant Candidate List during the 'Regulatory Determination' phase. A regulatory determination is a formal decision on whether EPA should initiate a process to develop a national primary drinking water regulation (NPDWR) for a specific contaminant based on the final CCL and UCMR monitoring results.
   - Developed in coordination with the UCMR. 
-  
-- **<u>Main CCL Site Link</u>**: https://www.epa.gov/ccl
-  
-- **<u>Summary</u>**: EPA uses the Unregulated Contaminant Monitoring Rule (UCMR) to collect data for contaminants suspected to be present in drinking water, but that do not have regulatory standards set under the Safe Drinking Water Act (SDWA). The monitoring provides EPA and other interested parties with nationally representative data on the occurrence of contaminants in drinking water, the number of people potentially being exposed, and an estimate of the levels of that exposure. These data can support future regulatory determinations and other actions to protect public health.  A regulatory determination is a formal decision on whether EPA should initiate a process to develop a national primary drinking water regulation for a specific contaminant.
 - **<u>Data</u>**:
     - Contaminant Candidate List: https://www.epa.gov/ccl
     - Basic information about the CCL: https://www.epa.gov/ccl/basic-information-ccl-and-regulatory-determination
@@ -168,7 +168,7 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
 
 - **<u>Overview</u>**: Good for toxicity information
 
-- **<u>Main IRIS Site Link</u>**:  https://www.epa.gov/iris
+- **<u>IRIS home page</u>**:  https://www.epa.gov/iris
   
 - **<u>Summary</u>**: "What is the toxicity?" The Integrated Risk Information System (IRIS) database contains the toxicology data used in setting the MCL. IRIS assessments provide the toxicity values for health effects resulting from chronic exposure to chemicals. These values include the oral reference dose (RfD) and other data used to assess the chemical. EPA's risk management decision is a function of the MCL, which in turn is based upon IRIS data.
 - **<u>Data</u>**:
