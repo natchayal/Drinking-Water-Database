@@ -124,7 +124,7 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
   - Web services and file shares provide ready access to data with excellent documentation
   - Need to compare what data are provided relative to state/local data portals.
     
-- **<u>Main WQP Site Link</u>**: https://www.waterqualitydata.us/
+- **<u>WQP home page</u>**: https://www.waterqualitydata.us/
   
 - **<u>Summary</u>**:
   The Water Quality Portal (WQP) is a cooperative service sponsored by the United States Geological Survey (USGS), the Environmental Protection Agency (EPA), and the National Water Quality Monitoring Council (NWQMC). It serves data collected by over 400 state, federal, tribal, and local agencies: https://www.waterqualitydata.us/. The data include information on sites where data are gathered, physical/chemical monitoring data, and biological sample data. Complete metadata are available here: https://www.waterqualitydata.us/portal_userguide/
@@ -252,7 +252,7 @@ lat_longs <- some_addresses %>%
 
 ### Drinking Water Regulations
 * <u>How EPA Regulates Drinking Water Contaminants</u>: https://www.epa.gov/sdwa/how-epa-regulates-drinking-water-contaminants 
-* <u>National Primary Drinking Water Regulation Table</u>: https://www.epa.gov/ground-water-and-drinking-water/national-primary-drinking-water-regulation-table (A table of drinking water MCLs)
+* <u>National Primary Drinking Water Regulation Table</u>: https://www.epa.gov/ground-water-and-drinking-water/national-primary-drinking-water-regulation-table (a table of drinking water MCLs)
 
 **<u>SDWA Rules and enforcement dates</u>**: contains drinking water rule pages which states the enforcement dates of each rule grouped by contaminant type. 
 - **<u>Summary</u>**: The EPA regulates over 90 contaminants in drinking water, setting limits to protect health and ensure water systems can comply using current technology. The Safe Drinking Water Act allows states to enforce their own standards, provided they are as strict as the EPA's.
