@@ -16,8 +16,8 @@ While this represents a number of useful sites, it's certainly not exhaustive.
 | --------------- | ------------------------------------------------------------ | :------------: | :----------: | -------------------------------------------------------- |
 | EPA             | [Safe Drinking Water Information System (SDWIS)]( https://ofmpub.epa.gov/apex/sfdw/f?p=108:1:0::NO:1) |       💧💧💧💧       |     💧💧💧      | Limited data, easy to scrape with R. <br />Can get violation data, treatment, water system detail, and purchaser-seller info. Overlaps with ECHO. <br />*Updated quarterly*.                            |                              |
 | EPA             | [Enforcement & Compliance History Online (ECHO)](https://echo.epa.gov/) |      💧💧💧      |    💧💧💧💧💧     | Good, but so much data it's hard to know what's what. <br />See [Drinking Water Dashboard](https://echo.epa.gov/trends/comparative-maps-dashboards/drinking-water-dashboard) for overview of SDWA regulatory activities. Extensive info on utility and contacts. <br />Download latest [Utility Meta data](https://echo.epa.gov/files/echodownloads/SDWA_latest_downloads.zip) as .zip.     |
-| EPA             | [USEPA Six Year Review](https://www.epa.gov/dwsixyearreview) |       💧💧💧💧       |     💧💧💧💧      | Data rich, easy to scrape or download as .zip file. <br />Reports National occurence for each contaminant with PWS info (not just the violations). <br />*Updated every 6 years*.  |
-| USGS/EPA        | [Water Quality Portal](https://www.waterqualitydata.us/)     |     💧💧💧💧💧      |    💧💧💧💧💧     | Well organized & comprehensive data.                |
+| EPA             | [USEPA Six Year Review (SYR)](https://www.epa.gov/dwsixyearreview) |       💧💧💧💧       |     💧💧💧💧      | Data rich, easy to scrape or download as .zip file. <br />Reports National occurence for each contaminant with PWS info (not just the violations). <br />*Updated every 6 years*.  |
+| USGS/EPA        | [Water Quality Portal (WQP)](https://www.waterqualitydata.us/)     |     💧💧💧💧💧      |    💧💧💧💧💧     | Well organized & comprehensive data.                |
 | EPA | [Unregulated Contaminant Monitoring Rule (UCMR)](https://www.epa.gov/dwucmr) |     💧💧💧💧💧      |    💧💧     | Easy to download as .zip file. <br />Reports occurrence on unregulated contaminants, disinfection type avilable for UCMR4 onwards, residual, and treatment info. <br />*Updated every 5 years*.    
 | EPA | [Contaminant Candidate List (CCL)](https://www.epa.gov/ccl) |     💧💧💧💧💧      |    💧     | Lists unregulated contaminants to be submitted as candidates for regulatory determinations. <br />*Updated every 5 years*.
 | EPA | [USEPA IRIS Information](https://www.epa.gov/iris) |     💧💧💧💧💧      |    💧     | Concentration on drinking (oral) route of exposure, not air. Download [NPDWR MCL table](https://www.epa.gov/sites/default/files/2016-06/documents/npwdr_complete_table.pdf) as .pdf. <br />See [IRIS Assessments](https://iris.epa.gov/AtoZ/?list_type=erd) for info on Toxicology data used for setting Maximum Contaminant Level (MCL).                       |
@@ -30,7 +30,7 @@ While this represents a number of useful sites, it's certainly not exhaustive.
 
 ## I. National Data Sources
 
-### A. EPA Safe Drinking Water Information System (SWDIS)
+### A. EPA Safe Drinking Water Information System (SDWIS)
 
 - **<u>Overview</u>**: Potential, but with obstacles; possibly redundant.
   - Violation and enforcement data are reported quarterly
