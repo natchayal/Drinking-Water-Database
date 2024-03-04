@@ -45,7 +45,7 @@ Once the Maximum Contaminant Level Goal (MCLG) is determined, EPA sets an enforc
   - use of the best available technology or treatment approaches.
   - other means which EPA finds are available (after examination for efficiency under field conditions, not solely under laboratory conditions).
 
-See [USEPA IRIS Information](#g-usepa-iris-information) and [Drinking Water Treatment Technologies](#i-drinking-water-treatment-technologies) section.
+See [USEPA IRIS Information](#g-usepa-iris-information) and [Drinking Water Treatment Technologies](#h-drinking-water-treatment-technologies) section.
 
 ---
 ## I. National Data Sources
@@ -206,7 +206,7 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
 - <u>Code examples</u>: None
 
 
-### I. Drinking Water Treatment Technologies
+### H. Drinking Water Treatment Technologies
 - **<u>Overview</u>**: Great. Provides current treatment technology and unit cost models.
 
 - **<u>Summary</u>**: EPA provides a list of available technology or treatment approaches for cities and towns to consider in order to decide and select what's the best drinking water treatment systems for the community.
