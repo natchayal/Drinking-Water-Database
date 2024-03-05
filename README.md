@@ -42,7 +42,9 @@ Summary adapted from [asdwa.org](https://www.asdwa.org/sdwa-regulatory-developme
 ## [Setting an MCL and MCLG](https://www.epa.gov/iris/reference-dose-rfd-description-and-use-health-risk-assessments)
 ![](images/regulation_mclg_development.png)
 
-Reference Dose (RfD) is based on the human equivalent dose (HED) of where there's either no observed adverse effect level (NOAEL) or low observed adverse effect level (LOAEL). It is buffered by an uncertainty factor (UF) which adjusts for the interspecies variabilty (e.g. from mice to humans). The RfD is then modified by body weight and the ingestion (BW/I) ratio to calculate the drinking water equivalent level (DWEL). A reduced BW/I ratio lowers the range of possible lifetime health advisory (Lifetime HA) given a range of relative source contribution (RSC) values. It is important to note that EPA uses 0.2 (20%) as a default RSC. RSC of 0.2 is saying that 20% of your contribution to this contaminant comes from drinking water. *Something to think about: If DWEL is 1 and RSC is 1 (100%), then your MCLG would be 1. If your DWEL was 1 and the RSC was 0.2 (20%), your MCLG would be 0.2ng/L*. This means, the lower the relative source contribution, the lower it drives the MCLG! A lot of people argue that this is problematic (see PFAS for example, using RSC ranging from 0.2 to 1 can drive MCLG anywhere from 70ng/L to >600ng/L, big span!). In short, Lifetime HA or MCLG, is significantly influenced by RfD, RSC and BW/I values. 
+Reference Dose (RfD) is based on the human equivalent dose (HED) of where there's either no observed adverse effect level (NOAEL) or low observed adverse effect level (LOAEL). It is buffered by an uncertainty factor (UF) which adjusts for the interspecies, intraspecies, and/or other variabilty (e.g. from mice to humans). The RfD is then modified by body weight and the ingestion (BW/I) ratio to calculate the drinking water equivalent level (DWEL). A reduced BW/I ratio lowers the range of possible lifetime health advisory (Lifetime HA) given a range of relative source contribution (RSC) values. It is important to note that EPA uses 0.2 (20%) as a default RSC. The lowest RSC is 20% based on the assumption that chemicals with exposures less than 20% of the total will not provide a meaningful opportunity to reduce risk for the population. 80% is the highest available RSC based on the assumption that there may be minor sources not captured by the data. RSC values are typically bounded by 20% floor and 80% ceiling. 
+
+RSC of 0.2 is saying that 20% of your contribution to this contaminant comes from drinking water. *Something to think about: If DWEL is 1 and RSC is 1 (100%), then your MCLG would be 1. If your DWEL was 1 and the RSC was 0.2 (20%), your MCLG would be 0.2ng/L*. This means, the lower the relative source contribution, the lower it drives the MCLG! A lot of people argue that this is problematic (see PFAS for example, using RSC ranging from 0.2 to 1 can drive MCLG anywhere from 70ng/L to >600ng/L, big span!). In short, Lifetime HA or MCLG, is significantly influenced by RfD, RSC and BW/I values.
 
 There can be multiple RfD sources whose standard are set by different agencies using their toxicological databases. For example for PFOS/PFOA: ASTDR (CDC), CA (California), NJ (New Jersey), and IRIS (USEPA) are different RfD sources used by different agencies, which uses different RfD values and could result in different Lifetime HAs or MCLGs. The difference in RfDs are most likely due to the different UFs used in calculation. EPA must decide on which MCLG to use based on the best available toxicology information.
 
@@ -51,6 +53,7 @@ Once the Maximum Contaminant Level Goal (MCLG) is determined, EPA sets an enforc
   - other means which EPA finds are available (after examination for efficiency under field conditions, not solely under laboratory conditions).
 
 See [USEPA IRIS Information](#g-usepa-iris-information) and [Drinking Water Treatment Technologies](#h-drinking-water-treatment-technologies) section.
+See [EPA Drinking Water Standards and Health Advisories tables](https://www.epa.gov/system/files/documents/2022-01/dwtable2018.pdf) for EPA reference.
 
 ---
 ## I. National Data Sources
@@ -207,6 +210,8 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
     - Chemical Toxicity Dashboard: https://comptox.epa.gov/dashboard/ (a dashboard for chemical toxicity and RfD, enter chemical name and check out *Executive Summary* tab. Here's an example for [Arsenic](https://comptox.epa.gov/dashboard/chemical/executive-summary/DTXSID4023886)
     - IRIS Glossary: https://www.epa.gov/iris/iris-glossary
     - Reference Dose (RfD) Description and Use in Health Risk Assessments: https://www.epa.gov/iris/reference-dose-rfd-description-and-use-health-risk-assessments
+    - Drinking Water Health Advisories (HAs): https://www.epa.gov/sdwa/drinking-water-health-advisories-has
+    	- EPA Drinking Water Standards and Health Advisories tables: https://www.epa.gov/system/files/documents/2022-01/dwtable2018.pdf (how EPA calculates HA, MCLG, MCL)
    
 - <u>Code examples</u>: None
 
