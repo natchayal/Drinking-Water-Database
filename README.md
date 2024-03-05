@@ -52,8 +52,8 @@ Once the Maximum Contaminant Level Goal (MCLG) is determined, EPA sets an enforc
   - use of the best available technology or treatment approaches.
   - other means which EPA finds are available (after examination for efficiency under field conditions, not solely under laboratory conditions).
 
-See [USEPA IRIS Information](#g-usepa-iris-information) and [Drinking Water Treatment Technologies](#h-drinking-water-treatment-technologies) section.
-See [EPA Drinking Water Standards and Health Advisories tables](https://www.epa.gov/system/files/documents/2022-01/dwtable2018.pdf) for EPA reference.
+See [USEPA IRIS Information](#g-usepa-iris-information) and [Drinking Water Treatment Technologies](#h-drinking-water-treatment-technologies) section. <br />
+For EPA reference, read [EPA Drinking Water Standards and Health Advisories tables](https://www.epa.gov/system/files/documents/2022-01/dwtable2018.pdf).
 
 ---
 ## I. National Data Sources
