@@ -40,7 +40,7 @@ Summary adapted from [asdwa.org](https://www.asdwa.org/sdwa-regulatory-developme
 
 ---
 ## [Setting an MCL and MCLG](https://www.epa.gov/iris/reference-dose-rfd-description-and-use-health-risk-assessments)
-![](images/regulation_mcl_development.png)
+![](images/regulation_mclg_development.png)
 
 Reference Dose (RfD) is based on the human equivalent dose (HED) of where there's either no observed adverse effect level (NOAEL) or low observed adverse effect level (LOAEL). It is buffered by an uncertainty factor (UF) which adjusts for the interspecies variabilty (e.g. from mice to humans). The RfD is then modified by body weight and the ingestion (BW/I) ratio to calculate the drinking water equivalent level (DWEL). A reduced BW/I ratio lowers the range of possible lifetime health advisory (Lifetime HA) given a range of relative source contribution (RSC) values. It is important to note that EPA uses 0.2 (20%) as a default RSC. RSC of 0.2 is saying that 20% of your contribution to this contaminant comes from drinking water. *Something to think about: If DWEL is 1 and RSC is 1 (100%), then your MCLG would be 1. If your DWEL was 1 and the RSC was 0.2 (20%), your MCLG would be 0.2ng/L*. This means, the lower the relative source contribution, the lower it drives the MCLG! A lot of people argue that this is problematic (see PFAS for example, using RSC ranging from 0.2 to 1 can drive MCLG anywhere from 70ng/L to >600ng/L, big span!). In short, Lifetime HA or MCLG, is significantly influenced by RfD, RSC and BW/I values. 
 
