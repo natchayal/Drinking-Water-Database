@@ -20,8 +20,8 @@ While this represents a number of useful sites, it's certainly not exhaustive.
 | USGS/EPA        | [Water Quality Portal (WQP)](https://www.waterqualitydata.us/)     |     💧💧💧💧💧      |    💧💧💧💧💧     | Well organized & comprehensive data.                |
 | EPA | [Unregulated Contaminant Monitoring Rule (UCMR)](https://www.epa.gov/dwucmr) |     💧💧💧💧💧      |    💧💧     | Easy to download as .zip file. <br />Reports occurrence on unregulated contaminants, disinfection type avilable for UCMR4 onwards, residual, and treatment info. <br />*Updated every 5 years*.    
 | EPA | [Contaminant Candidate List (CCL)](https://www.epa.gov/ccl) |     💧💧💧💧💧      |    💧     | Lists unregulated contaminants to be submitted as candidates for regulatory determinations. <br />*Updated every 5 years*.
-| EPA | [USEPA IRIS Information](https://www.epa.gov/iris) |     💧💧💧💧💧      |    💧     | Concentration on drinking (oral) route of exposure, not air. Download [NPDWR MCL table](https://www.epa.gov/sites/default/files/2016-06/documents/npwdr_complete_table.pdf) as .pdf. <br />See [IRIS Assessments](https://iris.epa.gov/AtoZ/?list_type=erd) and [ComTox Chemicals Dashboard](https://comptox.epa.gov/dashboard/) for info on Toxicology data used for setting Maximum Contaminant Level (MCL).                       |
-| EPA | [Drinking Water Regulations](https://www.epa.gov/dwreginfo/drinking-water-regulations) |       💧💧💧💧💧       |    💧     | SDWA rules and enforcement dates. Download [Regulation Timeline](https://www.epa.gov/sites/default/files/2015-10/documents/dw_regulation_timeline.pdf) as .pdf.      
+| EPA | [USEPA IRIS Information](https://www.epa.gov/iris) |     💧💧💧💧💧      |    💧     | Concentration on drinking (oral) route of exposure, not air. For Maximum Contaminant Level (MCL) info, refer to [NPDWR table](https://www.epa.gov/sites/default/files/2016-06/documents/npwdr_complete_table.pdf). <br />See [ComTox Chemicals Dashboard](https://comptox.epa.gov/dashboard/) and [EPA Health Advisories tables](https://www.epa.gov/system/files/documents/2022-01/dwtable2018.pdf) for info on toxicology data used for setting the MCL.                       |
+| EPA | [Drinking Water Regulations](https://www.epa.gov/dwreginfo/drinking-water-regulations) |       💧💧💧💧💧       |    💧     | SDWA rules and enforcement dates. See [Regulation Timeline](https://www.epa.gov/sites/default/files/2015-10/documents/dw_regulation_timeline.pdf). 
 | EPA | [Drinking Water Treatment Technologies](https://www.epa.gov/sdwa/overview-drinking-water-treatment-technologies) |       💧💧💧💧💧       |    💧     | Lists available technology for drinking water treatment and their [Work breakdown structure (WBS)](https://www.epa.gov/sdwa/drinking-water-treatment-technology-unit-cost-models) as xlsm. Developed by EPA for cost estimates (treatment, monitoring, administrative costs).
 
 ---
@@ -53,7 +53,7 @@ Once the Maximum Contaminant Level Goal (MCLG) is determined, EPA sets an enforc
   - other means which EPA finds are available (after examination for efficiency under field conditions, not solely under laboratory conditions).
 
 See [USEPA IRIS Information](#g-usepa-iris-information) and [Drinking Water Treatment Technologies](#h-drinking-water-treatment-technologies) section. <br />
-For EPA reference, read [EPA Drinking Water Standards and Health Advisories tables](https://www.epa.gov/system/files/documents/2022-01/dwtable2018.pdf).
+For EPA reference on health advisories, read [EPA Drinking Water Standards and Health Advisories tables](https://www.epa.gov/system/files/documents/2022-01/dwtable2018.pdf).
 
 ---
 ## I. National Data Sources
