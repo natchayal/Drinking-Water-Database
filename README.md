@@ -270,6 +270,9 @@ lat_longs <- some_addresses %>%
 * <u>Link</u>: https://www.waterboards.ca.gov/resources/data_databases/
 * <u>Link</u>: https://sdwis.waterboards.ca.gov/PDWW/
 
+**Illinois Drinking Water Watch**
+* <u>Link</u>: https://water.epa.state.il.us/dww/
+
 **Indiana Drinking Water Watch** (can select "sample point type" to identify distribution systems or entry point ID)
 * <u>Link</u>: https://indwv.gecsws.com/
   
@@ -286,7 +289,7 @@ lat_longs <- some_addresses %>%
 * <u>Link</u>: https://www.tceq.texas.gov/agency/water_main.html
 * <u>Link</u>: https://dww2.tceq.texas.gov/DWW/
 
-*Most, if not all, states will have their own version of the drinking water watch dashboard for state specific monitoring.*
+*Most, if not all, states will have their own version of the drinking water watch dashboard for state specific monitoring and access to a public water system's Consumer Confidence Report (CCRs).*
 
 
 ---
