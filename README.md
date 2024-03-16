@@ -79,19 +79,70 @@ For EPA reference on health advisories, read [EPA Drinking Water Standards and H
     
     - By using **R to scrape data** (BEST!) - R script is based on the info contained here: https://www.epa.gov/enviro/web-services and https://www.epa.gov/enviro/envirofacts-data-service-api
       - Then need to scrape sub-tables.
+      - IMPORTANT: The output is limited to 10000 rows of data at a time, but a user can pick which 10000 rows of data and then return to retrieve the next 10000.
       - If you need to define a code or other parameter in the table, this link contains all that information: https://enviro.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=VIOLATION&p_topic=SDWIS
 - <u>Code examples</u> : 
 ```r
-	Data1 <- read.csv(url("https://data.epa.gov/efservice/VIOLATION/ROWS/0:100000/CSV")) 
-	Data2 <- read.csv(url("https://data.epa.gov/efservice/VIOLATION/ROWS/100000:200000/CSV")) 
-	Data3 <- read.csv(url("https://data.epa.gov/efservice/VIOLATION/ROWS/200000:300000/CSV")) 
-	Data4 <- read.csv(url("https://data.epa.gov/efservice/VIOLATION/ROWS/300000:400000/CSV")) 
-	Data5 <- read.csv(url("https://data.epa.gov/efservice/VIOLATION/ROWS/400000:500000/CSV"))
+	library(readr)
+
+	Data1 <- read_csv(url("https://data.epa.gov/efservice/VIOLATION/ROWS/0:100000/CSV")) 
+	Data2 <- read_csv(url("https://data.epa.gov/efservice/VIOLATION/ROWS/10000:20000/CSV")) 
+	Data3 <- read_csv(url("https://data.epa.gov/efservice/VIOLATION/ROWS/20000:30000/CSV")) 
+	Data4 <- read_csv(url("https://data.epa.gov/efservice/VIOLATION/ROWS/30000:40000/CSV")) 
+	Data5 <- read_csv(url("https://data.epa.gov/efservice/VIOLATION/ROWS/40000:50000/CSV"))
 	
 	DataMerged <- do.call("rbind", list(Data1,Data2,Data3,Data4,Data5))
 	filename <- paste0("AllViolationData_EPA_EnvirofactsAPI_", format(Sys.Date(), "%m%d%y"), ".csv")
-	write.csv(DataMerged, file = filename, row.names=FALSE)
+	write_csv(DataMerged, file = filename)
 ```
+
+To achieve the above code iteratively using a loop in R: This code will keep fetching data in chunks of 10000 rows until there are no more observations left. It stores each chunk in a list and then merges all the chunks into a single data frame at the end.
+
+- <u>Code examples</u> : 
+```r
+	library(readr)
+	
+	fetch_data <- function(start_row, end_row) {
+	  url <- paste0("https://data.epa.gov/efservice/VIOLATION/ROWS/", start_row, ":", end_row, "/CSV")
+	  return(tryCatch(read_csv(url), error = function(e) {
+	    message("Error fetching data: ", conditionMessage(e))
+	    NULL
+	  }))
+	}
+	
+	# Initialize an empty list to store data frames
+	data_list <- list()
+	
+	# Define parameters
+	max_chunk_size <- 10000  # Maximum number of rows to fetch per iteration
+	start_row <- 0           # Initial starting row
+	
+	# Loop until there are no more observations
+	while (TRUE) {
+	  # Calculate the ending row for the current chunk
+	  end_row <- start_row + max_chunk_size - 1
+	  
+	  # Fetch data for the current chunk
+	  data <- fetch_data(start_row, end_row)
+	  
+	  # Check if data is empty (no more observations) or if an error occurred
+	  if (is.null(data) || nrow(data) == 0) {
+	    message("No more rows left. Exiting loop.")
+	    break  # Exit loop if no more data
+	  }
+	  
+	  # Add fetched data to the list
+	  data_list[[length(data_list) + 1]] <- data
+	  
+	  # Update starting row for the next chunk
+	  start_row <- end_row + 1
+	}
+	
+	# Merge all data frames into a single data frame
+	DataMerged <- do.call("rbind", data_list)
+
+```
+
 <ins>Treatment<ins>:
 - For treatment information, this link: https://enviro.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=TREATMENT&p_topic=SDWIS
 
