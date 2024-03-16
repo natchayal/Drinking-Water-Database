@@ -96,17 +96,23 @@ For EPA reference on health advisories, read [EPA Drinking Water Standards and H
 	write_csv(DataMerged, file = filename)
 ```
 
-To achieve the above code iteratively using a loop in R: This code will keep fetching data in chunks of 10000 rows until there are no more observations left. It stores each chunk in a list and then merges all the chunks into a single data frame at the end.
+To achieve the above code iteratively using a loop in R: This code will keep fetching data in chunks of 10000 rows until there are no more observations left. It stores each chunk in a list and then merges all the chunks into a single data frame at the end. Note: It's going to take some time, there's over 2 million violation data!
 
 - <u>Code examples</u> : 
 ```r
 	library(readr)
 	
+	# Function to fetch data from a specified range of rows
 	fetch_data <- function(start_row, end_row) {
 	  url <- paste0("https://data.epa.gov/efservice/VIOLATION/ROWS/", start_row, ":", end_row, "/CSV")
 	  return(tryCatch(read_csv(url), error = function(e) {
-	    message("Error fetching data: ", conditionMessage(e))
-	    NULL
+	    if (grepl("HTTP error 500", conditionMessage(e))) {
+	      message("HTTP error 500 occurred. Continuing to fetch data.")
+	      return(NULL)
+	    } else {
+	      message("Error fetching data: ", conditionMessage(e))
+	      stop("Error encountered while fetching data.")
+	    }
 	  }))
 	}
 	
@@ -116,8 +122,9 @@ To achieve the above code iteratively using a loop in R: This code will keep fet
 	# Define parameters
 	max_chunk_size <- 10000  # Maximum number of rows to fetch per iteration
 	start_row <- 0           # Initial starting row
+	no_obs_counter <- 0      # Counter for consecutive iterations with no observations
 	
-	# Loop until there are no more observations
+	# Loop until there are no more observations or if there were no observations three times in a row
 	while (TRUE) {
 	  # Calculate the ending row for the current chunk
 	  end_row <- start_row + max_chunk_size - 1
@@ -125,17 +132,33 @@ To achieve the above code iteratively using a loop in R: This code will keep fet
 	  # Fetch data for the current chunk
 	  data <- fetch_data(start_row, end_row)
 	  
-	  # Check if data is empty (no more observations) or if an error occurred
-	  if (is.null(data) || nrow(data) == 0) {
-	    message("No more rows left. Exiting loop.")
-	    break  # Exit loop if no more data
+	  # Check if data is NULL (indicating HTTP error 500)
+	  if (is.null(data)) {
+	    # Continue to the next iteration if HTTP error 500 occurred
+	    start_row <- end_row + 1
+	    next
 	  }
 	  
-	  # Add fetched data to the list
-	  data_list[[length(data_list) + 1]] <- data
-	  
-	  # Update starting row for the next chunk
-	  start_row <- end_row + 1
+	  # Check if data is empty (no more observations)
+	  if (nrow(data) == 0) {
+	    # Increment the counter if there are no observations
+	    no_obs_counter <- no_obs_counter + 1
+	    
+	    if (no_obs_counter >= 3) {
+	      # Exit loop if there are no observations three times in a row
+	      message("No observations three times in a row. Exiting loop.")
+	      break
+	    }
+	  } else {
+	    # Reset the counter if observations were found
+	    no_obs_counter <- 0
+	    
+	    # Add fetched data to the list
+	    data_list[[length(data_list) + 1]] <- data
+	    
+	    # Update starting row for the next chunk
+	    start_row <- end_row + 1
+	  }
 	}
 	
 	# Merge all data frames into a single data frame
