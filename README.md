@@ -85,35 +85,37 @@ For EPA reference on health advisories, read [EPA Drinking Water Standards and H
 ```r
 	library(readr)
 
-	Data1 <- read_csv(url("https://data.epa.gov/efservice/VIOLATION/ROWS/0:100000/CSV")) 
+	Data1 <- read_csv(url("https://data.epa.gov/efservice/VIOLATION/ROWS/0:10000/CSV")) 
 	Data2 <- read_csv(url("https://data.epa.gov/efservice/VIOLATION/ROWS/10000:20000/CSV")) 
 	Data3 <- read_csv(url("https://data.epa.gov/efservice/VIOLATION/ROWS/20000:30000/CSV")) 
 	Data4 <- read_csv(url("https://data.epa.gov/efservice/VIOLATION/ROWS/30000:40000/CSV")) 
 	Data5 <- read_csv(url("https://data.epa.gov/efservice/VIOLATION/ROWS/40000:50000/CSV"))
 	
-	DataMerged <- do.call("rbind", list(Data1,Data2,Data3,Data4,Data5))
+	DataMerged_meta <- do.call("rbind", list(Data1,Data2,Data3,Data4,Data5))
 	filename <- paste0("AllViolationData_EPA_EnvirofactsAPI_", format(Sys.Date(), "%m%d%y"), ".csv")
-	write_csv(DataMerged, file = filename)
+	write_csv(DataMerged_meta, file = filename)
 ```
 
-To achieve the above code iteratively using a loop in R: This code will keep fetching data in chunks of 10000 rows until there are no more observations left. It stores each chunk in a list and then merges all the chunks into a single data frame at the end. Note: It's going to take some time, there's over 2 million violation data!
+To achieve the above code iteratively using a loop in R: This code will keep fetching data in chunks of 10000 rows until there are no more observations left. It stores each chunk in a list and then merges all the chunks into a single data frame at the end. <br />Note: It's going to take some time, ~10min, there's over 2 million violation data!
 
 - <u>Code examples</u> : 
 ```r
 	library(readr)
 	
-	# Function to fetch data from a specified range of rows
+	# Function to fetch data from a specified range of rows with error handling
 	fetch_data <- function(start_row, end_row) {
 	  url <- paste0("https://data.epa.gov/efservice/VIOLATION/ROWS/", start_row, ":", end_row, "/CSV")
-	  return(tryCatch(read_csv(url), error = function(e) {
-	    if (grepl("HTTP error 500", conditionMessage(e))) {
-	      message("HTTP error 500 occurred. Continuing to fetch data.")
-	      return(NULL)
-	    } else {
+	  
+	  # Try fetching data with error handling
+	  data <- tryCatch(
+	    read_csv(url, col_types = cols(.default = "c")),  # Set all columns to character type initially
+	    error = function(e) {
 	      message("Error fetching data: ", conditionMessage(e))
-	      stop("Error encountered while fetching data.")
+	      return(NULL)
 	    }
-	  }))
+	  )
+	  
+	  return(data)
 	}
 	
 	# Initialize an empty list to store data frames
@@ -132,9 +134,9 @@ To achieve the above code iteratively using a loop in R: This code will keep fet
 	  # Fetch data for the current chunk
 	  data <- fetch_data(start_row, end_row)
 	  
-	  # Check if data is NULL (indicating HTTP error 500)
+	  # Check if data is NULL (indicating error)
 	  if (is.null(data)) {
-	    # Continue to the next iteration if HTTP error 500 occurred
+	    # Continue to the next iteration if error occurred
 	    start_row <- end_row + 1
 	    next
 	  }
@@ -153,6 +155,9 @@ To achieve the above code iteratively using a loop in R: This code will keep fet
 	    # Reset the counter if observations were found
 	    no_obs_counter <- 0
 	    
+	    # Replace "NA" strings with NA
+	    data[data == "NA"] <- NA
+	    
 	    # Add fetched data to the list
 	    data_list[[length(data_list) + 1]] <- data
 	    
@@ -162,7 +167,30 @@ To achieve the above code iteratively using a loop in R: This code will keep fet
 	}
 	
 	# Merge all data frames into a single data frame
-	DataMerged <- do.call("rbind", data_list)
+	DataMerged_meta <- do.call("rbind", data_list)
+
+	# Apply original data types to columns of DataMerged_meta
+	original_data_types <- read_csv("https://data.epa.gov/efservice/VIOLATION/ROWS/0:1/CSV", col_types = cols())
+	original_data_types <- original_data_types[1, ]  # Take only the first row
+	# Loop through each column of DataMerged_meta
+	for (col_name in names(DataMerged_meta)) {
+	  # Get the desired class from original_data_types
+	  desired_class <- class(original_data_types[[col_name]])
+	  
+	  # Convert the class of the column in DataMerged_meta
+	  if (desired_class != "Date") {
+	    DataMerged_meta[[col_name]] <- as(DataMerged_meta[[col_name]], desired_class)
+	  } else {
+	    # Special handling for Date class conversion
+	    DataMerged_meta[[col_name]] <- as.Date(DataMerged_meta[[col_name]])
+	  }
+	  
+	  # Convert NA values to NA of the appropriate class
+	  DataMerged_meta[[col_name]][is.na(DataMerged_meta[[col_name]])] <- NA
+	}
+
+	filename <- paste0("data/raw/SDWIS/AllViolationData_EPA_EnvirofactsAPI_", format(Sys.Date(), "%m%d%y"), ".csv")
+	write_csv(DataMerged_meta, file = filename)
 
 ```
 
