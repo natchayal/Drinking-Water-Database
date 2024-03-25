@@ -304,12 +304,13 @@ lat_longs <- some_addresses %>%
 
 ## III. Local Data Sources
 **Florida**
+- Water Management Districts in Florida: https://floridadep.gov/owper/water-policy/content/water-management-districts
 - Managed by Southwest Florida Water Management Disrict (SWFWMD)
-- Source for permits, hydrologic, atmospheric, water level, water-quality, and rainfall data collected by the District in Near-Real-Time:
-	- Water Management Information Sysem (WMIS): https://www18.swfwmd.state.fl.us/ResData/Search/ExtDefault.aspx now replaced by EDP
- 	- Environmental Data Portal (EDP): https://www.swfwmd.state.fl.us/resources/data-maps/environmental-data-portal
-  	- Interactive Map Gallery: http://www.swfwmd.state.fl.us/resources/data-maps/interactive-map-gallery
-  	- SWFWMD Rules and References: https://www.swfwmd.state.fl.us/business/epermitting/rules
+	- Source for permits, hydrologic, atmospheric, water level, water-quality, and rainfall data collected by the District in Near-Real-Time:
+		- Water Management Information Sysem (WMIS): https://www18.swfwmd.state.fl.us/ResData/Search/ExtDefault.aspx now replaced by EDP
+	 	- Environmental Data Portal (EDP): https://www.swfwmd.state.fl.us/resources/data-maps/environmental-data-portal
+	  	- Interactive Map Gallery: http://www.swfwmd.state.fl.us/resources/data-maps/interactive-map-gallery
+	  	- SWFWMD Rules and References: https://www.swfwmd.state.fl.us/business/epermitting/rules
 
 ------
 ## IV. Other Resources
