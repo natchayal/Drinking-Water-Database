@@ -242,6 +242,7 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
     - CDC ENJI: https://www.atsdr.cdc.gov/placeandhealth/eji/index.html for environmental justice index (EJI)
     - USGS: https://www.usgs.gov/ provides geographical data and shapefiles
     - US Census Bureau: https://data.census.gov/ for Census data updated every 10 years about the nation's people and the economy
+    - NOAA: https://www.noaa.gov/ for climate and rainfall data
     - R script on how to geocode by address:
 ```r
 # install the necessary libraries
@@ -303,11 +304,12 @@ lat_longs <- some_addresses %>%
 
 ## III. Local Data Sources
 **Florida**
-- Managed by Southwest Florida Water Management Disrict (SFWMD)
+- Managed by Southwest Florida Water Management Disrict (SWFWMD)
 - Source for permits, hydrologic, atmospheric, water level, water-quality, and rainfall data collected by the District in Near-Real-Time:
 	- Water Management Information Sysem (WMIS): https://www18.swfwmd.state.fl.us/ResData/Search/ExtDefault.aspx now replaced by EDP
  	- Environmental Data Portal (EDP): https://www.swfwmd.state.fl.us/resources/data-maps/environmental-data-portal
   	- Interactive Map Gallery: http://www.swfwmd.state.fl.us/resources/data-maps/interactive-map-gallery
+  	- SWFWMD Rules and References: https://www.swfwmd.state.fl.us/business/epermitting/rules
 
 ------
 ## IV. Other Resources
