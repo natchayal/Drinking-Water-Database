@@ -101,7 +101,9 @@ For EPA reference on health advisories, read [EPA Drinking Water Standards and H
 ```
 
 <ins>Treatment<ins>:
-- For treatment information, this link: https://enviro.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=TREATMENT&p_topic=SDWIS
+- For treatment information (latest refresh, data updated quarterly), this link: https://enviro.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=TREATMENT&p_topic=SDWIS
+
+- For additional years (previous to present), data are available in the ECHO Downloads, link: https://echo.epa.gov/tools/data-downloads
 
 - For other Envirofacts Data Service: API https://www.epa.gov/enviro/sdwis-model (How these files relate is described here)
   
