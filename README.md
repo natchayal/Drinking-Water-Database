@@ -249,7 +249,7 @@ nitrate <- read.delim("C:/Users/nluan/Downloads/syr3_phasechem_3/nitrate.txt")
     - CDC SVI: https://www.atsdr.cdc.gov/placeandhealth/svi/index.html for social vulnerability index (SVI) 
     - CDC ENJI: https://www.atsdr.cdc.gov/placeandhealth/eji/index.html for environmental justice index (EJI)
     - USGS: https://www.usgs.gov/ provides geographical data and shapefiles
-    - EnviroAtlas: https://enviroatlas.epa.gov/enviroatlas/interactivemap/
+    - EnviroAtlas: https://enviroatlas.epa.gov/enviroatlas/interactivemap/ for interative map and https://www.epa.gov/enviroatlas/data-download?token=JZJqcTGD-0bDYuzvsukLXTOQssG9oYkWOnxAAH-Vy8c for data downloads.
     - US Census Bureau: https://data.census.gov/ for Census data updated every 10 years about the nation's people and the economy
     - NOAA: https://www.noaa.gov/ for climate and rainfall data
     - R script on how to geocode by address:
