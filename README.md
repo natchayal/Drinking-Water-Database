@@ -1,7 +1,5 @@
 # Drinking Water Database Exploration
-Analyzing drinking water standards and regulations. This git repository contains code for data acquision (see get_data subdirectory), analysis (see analysis subdirectory), and the jekyll site for this project (see docs subdirectory). 
-
-The website for this project can be viewed here (*in progress*).
+Analyzing drinking water standards and regulations. This git repository contains code for data acquision (see [get_data subdirectory](https://github.com/natchayal/Drinking-Water-Database/tree/main/get_data)), analysis (see [analysis subdirectory](https://github.com/natchayal/Drinking-Water-Database/tree/main/analysis)), and any relevant documentation for this project (see [docs subdirectory](https://github.com/natchayal/Drinking-Water-Database/tree/main/docs)). 
 
 ## 💧 Executive Summary 💧
 I spent a lot of time exploring various drinking water database available on the internet including national, state-level, and local-level databases. I evaluated resources on the relevance of the data they provided as well as how easily the data could be accessed and downloaded, a summary of which is provided below. Using a 1 to 5 water drop scale, with 1 being the lowest and 5 the highest, in terms of ease of access and utility of data. Ease of access ranges from 1 drop for data that is hard to access to 5 drops for data that is readily available online. In terms of utility, 1 drop denotes data with limited application, serving primarily as reference material like MCL values or enforcement dates, while 5 drops indicate data of high utility, suitable for conducting extensive analyses and answering research questions. 
@@ -10,7 +8,7 @@ I also generated a number of R scripts, provided as interactive R markdown noteb
 
 While this represents a number of useful sites, it's certainly not exhaustive. 
 
-Note: The EPA ECHO database has a lot of data and easy to get lost. Recommend pre-processing data as follow to allow stitching of multiple databases: use [FRS_PROGRAM_LINKS.csv](https://echo.epa.gov/tools/data-downloads#FRS) to match PWSID with PGM_SYS_ID and get its matching REGISTRY_ID and FAC. PGM_SYS_ACRNM == SFDW and PGM_SYS_ID == PWSID for SDWIS data. Then use PWSID and/or FIPS to merge with other databases.
+Note: The EPA ECHO database has a lot of data which makes it easy to get lost. Recommend pre-processing data as follow to allow stitching of multiple databases: (1) use  *Program Links (FRS_PROGRAM_LINKS.csv) downloaded* from [Facility Registry Service (FRS) Download](https://echo.epa.gov/tools/data-downloads#FRS) to get matching PGM_SYS_ID for PWSID with PGM_SYS_ID and get its matching REGISTRY_ID and FAC. PGM_SYS_ACRNM == SFDW and PGM_SYS_ID == PWSID for SDWIS data. Then use PWSID and/or FIPS to merge with other databases.
 
 
 **Summary of datasets evaluated**
