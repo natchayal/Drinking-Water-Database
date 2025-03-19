@@ -1,6 +1,6 @@
 # Data Processing
 
-## 📂 Script Folder Structure (code)
+## 📂 Script Folder Structure (scripts)
 This repository contains R script to process structured data stored in the `data/` directory. 
 - **SDWIS_violation_data_Rscript.R** (pulls data from sdwis_violation) <br/>
 - **SYR_data_Rscript.R** (pulls data from six_year_review) <br/>
