@@ -22,7 +22,7 @@ setwd("C:/Users/nluan/OneDrive/Documents/GitHub/Drinking-Water-Database")
 ## sign-up for census API key https://api.census.gov/data/key_signup.html
 
 # set Census API key
-census_api_key("65325f8f1ab8d48e74b590507881c340ab81000d", overwrite = TRUE, install = TRUE)
+census_api_key("YOUR KEY GOES HERE", overwrite = TRUE, install = TRUE)
 
 # define zip code of interest
 zip_codes <- c("33606","33609","33629","33611","33616","33605","33619","33610","33584","33510","33527","33592")
