@@ -28,7 +28,7 @@ Note: The EPA ECHO database has a lot of data which makes it easy to get lost. R
 | EPA | [EJ Screen](https://www.epa.gov/ejscreen/download-ejscreen-data) |       💧💧💧💧       |    💧💧💧     | Combining environmental and socioeconomic indicators for environmental jystice analysis. See [EJScreen Mapping Tool](https://ejscreen.epa.gov/mapper/). Download [EJScreen Technical Documentation (PDF)](https://www.epa.gov/system/files/documents/2024-07/ejscreen-tech-doc-version-2-3.pdf).
 | EPA | [Community Water System Service Area Boundaries](https://www.epa.gov/ground-water-and-drinking-water/community-water-system-service-area-boundaries) |       💧💧💧💧💧       |    💧💧💧💧💧     | Exciting new data set, mapping application, and supporting materials for CWS service area boundaries. Developed by EPA included detailed facility, buyer-seller info, and EJScreen community report all in one place. Incredibly promising!!
 | EPA | [National PFAS Datasets](https://echo.epa.gov/trends/pfas-tools) |       💧💧💧💧💧       |    💧💧💧💧💧     | Exciting new data set, mapping application, and supporting materials for everything related to PFAS. [PFAS Analytic Tools](https://awsedap.epa.gov/public/extensions/PFAS_Tools/PFAS_Tools.html).
-
+| EPA | [Drinking Water Models, Tools, and Methods](https://www.epa.gov/water-research/drinking-water-models-tools-and-methods) |       💧💧💧💧💧       |    💧💧     | Calculation Tools.
 ---
 ## [Overview of Regulatory Development Processes](https://www.epa.gov/sdwa/sdwa-evaluation-and-rulemaking-process)
 ![](images/flowsheet_sdwa_regulatory_process.png)
