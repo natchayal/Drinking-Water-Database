@@ -19,7 +19,7 @@ p_load(tidyverse, readxl, purrr, tools, lubridate, writexl, zoo, ggthemes, tidyc
 # Load data ---------------------------------------------------------------
 # EJSCREEN data is available at the census block-group level, which is the smallest level of geographic granularity the tool uses.
 # This is a 12-digit code identifying the US Census Block Group where the first 5 digits correspond to the FIPS code of State, County
-ejscreen <- read_csv("EJSCREEN_2024_BG_StatePct_with_AS_CNMI_GU_VI.csv")
+ejscreen <- read_csv("data/raw/EJSCREEN_2024_BG_StatePct_with_AS_CNMI_GU_VI.csv")
 
 # Census data by ZCTA to get ZIPCODE --------------------------------------
 ## package tidycensus: https://walker-data.com/tidycensus/
@@ -83,18 +83,18 @@ svi_census_bg <- svi_census_bg %>%
 # Link ZCTA to Block ID by matching shapefile geometries ------------------
 # Manually Download ZCTA Shapefile (source: https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html)
 # Scroll to "Web Interface" and select Block or Block Group" to download as .zip
-zcta_shapes <- st_read("tl_2024_us_zcta520/tl_2024_us_zcta520.shp") %>%
+zcta_shapes <- st_read("data/raw/tl_2024_us_zcta520/tl_2024_us_zcta520.shp") %>%
   st_transform(4326)
 # Filter ZCTA shapes to only those zipcodes
 zcta_filtered <- zcta_shapes %>%
   filter(ZCTA5CE20 %in% zip_codes)
 
 # Get Block Group shapefiles (smallest level EJScreen goes down to)
-block_groups <- st_read("tl_2024_12_bg/tl_2024_12_bg.shp") %>%
+block_groups <- st_read("data/raw/tl_2024_12_bg/tl_2024_12_bg.shp") %>%
   st_transform(4326)
 
 # Get Block shapefiles (Might be useless since EJScreen don't go down to this level)
-block <- st_read("tl_2024_12_tabblock20/tl_2024_12_tabblock20.shp") %>%
+block <- st_read("data/raw/tl_2024_12_tabblock20/tl_2024_12_tabblock20.shp") %>%
   st_transform(4326)
 
 # Spatial join: assign each block group a ZIP code (ZCTA)
@@ -148,7 +148,7 @@ ejscreen_zipcode <- bg_zcta_svi_select %>%
   ) %>%
   select(STATE, COUNTY, TAMPA_AREA, BLOCK_ID, ZCTA, ZIPCODE, everything())
 
-write_csv(ejscreen_zipcode, "EJScreen_with_zipcode.csv")
+write_csv(ejscreen_zipcode, "data/cleaned/EJScreen_with_zipcode.csv")
 
 
 # Check which zipcode is missing ------------------------------------------
