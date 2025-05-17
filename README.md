@@ -83,7 +83,7 @@ For EPA reference on health advisories, read [EPA Drinking Water Standards and H
     	- A full description of violation and contaminant codes can be accessed in the SDWA_REF_CODE_VALUES.csv of https://echo.epa.gov/files/echodownloads/SDWA_latest_downloads.zip ECHO site.
     
     - By using **R to scrape data** (BEST!) - R script is based on the info contained here: https://www.epa.gov/enviro/web-services and https://www.epa.gov/enviro/envirofacts-data-service-api
-      - Then need to scrape sub-tables, refer to: https://enviro.epa.gov/envirofacts/metadata/search and https://enviro.epa.gov/envirofacts/metadata/model.
+      - Then need to scrape sub-tables, refer to: https://enviro.epa.gov/envirofacts/metadata/search, https://enviro.epa.gov/envirofacts/metadata/model, https://enviro.epa.gov/envirofacts/metadata/model/sdwis, and https://www.epa.gov/DWdata/sdwis-federal-reporting-services-data-dictionary#reports
       - Limitations: The output may be limited to 10000 rows of data at a time, sometimes can get away scraping more, but a user can pick which 10000 rows of data and then return to retrieve the next 10000. 
       - If you need to define a code or other parameter in the table, this link contains all that information: https://enviro.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=VIOLATION&p_topic=SDWIS
 - <u>Code examples</u> : 
