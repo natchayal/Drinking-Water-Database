@@ -2,7 +2,7 @@
 # title: "USEPA Violation Data"
 # Description: Code to get SDWIS Violation data as .csv using API
 # author: Natchaya Luangphairin
-# date last revised: "3/17/2025"
+# date last revised: "10/27/2025"
 # output: R Script
 #################################################################
   
@@ -12,7 +12,7 @@
 if (!require("pacman")) install.packages("pacman")
 library(pacman)
 p_load(tidyverse, readxl, purrr, tools, lubridate, writexl)
-setwd("C:/Users/nluan/OneDrive/Documents/GitHub/Drinking-Water-Database")
+#setwd("C:/Users/nluan/OneDrive/Documents/GitHub/Drinking-Water-Database")
 
 # Import data -------------------------------------------------------------
 
@@ -23,6 +23,8 @@ setwd("C:/Users/nluan/OneDrive/Documents/GitHub/Drinking-Water-Database")
 # Run each line one-by-one. Stop once you get an empty data set. You will likely encounter errors for many parts. Don't give up, come back to that set later. You should have over 2 million entries in the DataMerged file if you did this correctly.
 
 # Import violation data by PWSID (each year there's ~220,000 more violations)
+raw_violation_data <- read_csv(url("https://data.epa.gov/efservice/VIOLATION/ROWS/CSV")) # many rows so calling it once may or may not works (timeout reached before grabbing all data)
+# If top code failed, proceed with below, calling data in increments and do final merge.
 Data1<- read_csv(url("https://data.epa.gov/efservice/VIOLATION/ROWS/0:100000/CSV")) 
 Data2<- read_csv(url("https://data.epa.gov/efservice/VIOLATION/ROWS/100001:200000/CSV")) 
 Data3<- read_csv(url("https://data.epa.gov/efservice/VIOLATION/ROWS/200001:300000/CSV")) 
@@ -59,18 +61,26 @@ DataMerged_meta <- do.call("rbind", list(Data1,Data2,Data3,Data4,Data5,Data6,Dat
 Data11,Data12,Data13,Data14,Data15,Data16,Data17,Data18,Data19,Data20,Data21,Data22,Data23,Data24,Data25,Data26,Data27,Data28,Data29,Data30))
 #View(DataMerged)
 #names(DataMerged)
-filename <- paste0("data/sdwis_violation/raw/AllViolationData_EPA_EnvirofactsAPI_", format(Sys.Date(), "%m%d%y"), ".csv")
+filename <- paste0("data/sdwis_violation/raw/AllViolationData_EPA_EnvirofactsAPI_", format(Sys.Date(), "%Y%m%d"), ".csv")
 write_csv(DataMerged_meta, file = filename) # save into folder called raw for raw data
 
 
 
 # Clean data (example) ----------------------------------------------------
+setwd("C:/Users/nluan/Box Sync/USF PhD CEE/Abstracts and Presentations/Presentations/ENV6666 USEPA Rules and Regulations/Fall 2025")
 
 #### Read raw violation data ####
-raw_data <- read_csv("data/sdwis_violation/raw/AllViolationData_EPA_EnvirofactsAPI_031725.csv")  #2676752 obs
+raw_violation_data <- read_csv("data/sdwis_violation/raw/AllViolationData_EPA_EnvirofactsAPI_20251024.csv")  #2676752 obs
+
+# Identify all columns with "date" in their name
+date_cols <- grep("date", names(raw_violation_data), value = TRUE, ignore.case = TRUE)
+
+data_all <- raw_violation_data %>%
+  mutate(across(all_of(date_cols), ~ suppressWarnings(as.Date(sub("T.*", "", .), "%Y-%m-%d"))))
+
 
 # add new column for violation begin month, quarter, year_quarter
-data_all <- raw_data %>% 
+data_all <- data_all %>% 
   mutate(year = year(compl_per_begin_date),
          month = month(compl_per_begin_date),
          quarter = quarter(compl_per_begin_date),
@@ -79,7 +89,9 @@ data_all <- raw_data %>%
 View(data_all)
 glimpse(data_all)
 
-filename <- paste0("data/sdwis_violation/cleaned/AllViolationData_EPA_EnvirofactsAPI_cleaned_", format(Sys.Date(), "%m%d%y"), ".csv")
+setwd("data/sdwis_violation/cleaned")
+
+filename <- paste0("AllViolationData_EPA_EnvirofactsAPI_cleaned_", format(Sys.Date(), "%Y%m%d"), ".csv")
 write_csv(data_all, file = filename) # save into folder called raw for raw data
 
 
@@ -93,67 +105,67 @@ colnames(data_all)
 
 # Active Community Water Systems (CWS) only
 # Arsenic: 
-Arsenic <- filter(data_all, contaminant_code == "1005" & pws_type_code == "CWS" & pws_activity_code == "A" & violation_year >= 2006 & violation_year <= 2024)
-write_csv(Arsenic, file = paste0("Arsenic_violations_", format(Sys.Date(), "%m%d%y"), ".csv"))
+Arsenic <- filter(data_all, contaminant_code == "1005" & pws_type_code == "CWS" & pws_activity_code == "A" & year >= 2006 & year <= 2024)
+write_csv(Arsenic, file = paste0("Arsenic_violations_", format(Sys.Date(), "%Y%m%d"), ".csv"))
 
 # Fluoride: 
-Fluoride <- filter(data_all, contaminant_code == "1025" & pws_type_code == "CWS" & pws_activity_code == "A" & violation_year >= 2006 & violation_year <= 2024)
-write_csv(Fluoride, file = paste0("Fluoride_violations_", format(Sys.Date(), "%m%d%y"), ".csv"))
+Fluoride <- filter(data_all, contaminant_code == "1025" & pws_type_code == "CWS" & pws_activity_code == "A" & year >= 2006 & year <= 2024)
+write_csv(Fluoride, file = paste0("Fluoride_violations_", format(Sys.Date(), "%Y%m%d"), ".csv"))
 
 # Lead:
-Lead <- filter(data_all, contaminant_code == "1030" & pws_type_code == "CWS" & pws_activity_code == "A" & violation_year >= 2006 & violation_year <= 2024)
-write_csv(Lead, file = paste0("Lead_violations_", format(Sys.Date(), "%m%d%y"), ".csv"))
+Lead <- filter(data_all, contaminant_code == "1030" & pws_type_code == "CWS" & pws_activity_code == "A" & year >= 2006 & year <= 2024)
+write_csv(Lead, file = paste0("Lead_violations_", format(Sys.Date(), "%Y%m%d"), ".csv"))
 
 # Manganese:
-Manganese<- filter(data_all, contaminant_code == "1032" & pws_type_code == "CWS" & pws_activity_code == "A" & violation_year >= 2006 & violation_year <= 2024)
-write_csv(Manganese, file = paste0("Manganese_violations_", format(Sys.Date(), "%m%d%y"), ".csv"))
+Manganese<- filter(data_all, contaminant_code == "1032" & pws_type_code == "CWS" & pws_activity_code == "A" & year >= 2006 & year <= 2024)
+write_csv(Manganese, file = paste0("Manganese_violations_", format(Sys.Date(), "%Y%m%d"), ".csv"))
 
 # Asbestos:
-Asbestos <- filter(data_all, contaminant_code == "1094" & pws_type_code == "CWS" & pws_activity_code == "A" & violation_year >= 2006 & violation_year <= 2024)
-write_csv(Asbestos, file = paste0("Asbestos_violations_", format(Sys.Date(), "%m%d%y"), ".csv"))
+Asbestos <- filter(data_all, contaminant_code == "1094" & pws_type_code == "CWS" & pws_activity_code == "A" & year >= 2006 & year <= 2024)
+write_csv(Asbestos, file = paste0("Asbestos_violations_", format(Sys.Date(), "%Y%m%d"), ".csv"))
 
 # Dichloromethane:
-Dichloromethane <- filter(data_all, contaminant_code == "2964" & pws_type_code == "CWS" & pws_activity_code == "A" & violation_year >= 2006 & violation_year <= 2024)
-write_csv(Dichloromethane, file = paste0("Dichloromethane_violations_", format(Sys.Date(), "%m%d%y"), ".csv"))
+Dichloromethane <- filter(data_all, contaminant_code == "2964" & pws_type_code == "CWS" & pws_activity_code == "A" & year >= 2006 & year <= 2024)
+write_csv(Dichloromethane, file = paste0("Dichloromethane_violations_", format(Sys.Date(), "%Y%m%d"), ".csv"))
 
 # Uranium:
-Uranium <- filter(data_all, contaminant_code == "4006" & pws_type_code == "CWS" & pws_activity_code == "A" & violation_year >= 2006 & violation_year <= 2024)
-write_csv(Uranium, file = paste0("Uranium_violations_", format(Sys.Date(), "%m%d%y"), ".csv"))
+Uranium <- filter(data_all, contaminant_code == "4006" & pws_type_code == "CWS" & pws_activity_code == "A" & year >= 2006 & year <= 2024)
+write_csv(Uranium, file = paste0("Uranium_violations_", format(Sys.Date(), "%Y%m%d"), ".csv"))
 
 # HAA5:
-HAA5 <- filter(data_all, contaminant_code == "2456" & pws_type_code == "CWS" & pws_activity_code == "A" & violation_year >= 2006 & violation_year <= 2024)
-write_csv(HAA5, file = paste0("HAA5_violations_", format(Sys.Date(), "%m%d%y"), ".csv"))
+HAA5 <- filter(data_all, contaminant_code == "2456" & pws_type_code == "CWS" & pws_activity_code == "A" & year >= 2006 & year <= 2024)
+write_csv(HAA5, file = paste0("HAA5_violations_", format(Sys.Date(), "%Y%m%d"), ".csv"))
 
 # Nitrate
-Nitrate <- filter(data_all, contaminant_code == "1040" & pws_type_code == "CWS" & violation_year >= 2006 & violation_year <= 2024)
-write_csv(Nitrate, file = paste0("Nitrate_violations_", format(Sys.Date(), "%m%d%y"), ".csv"))
+Nitrate <- filter(data_all, contaminant_code == "1040" & pws_type_code == "CWS" & year >= 2006 & year <= 2024)
+write_csv(Nitrate, file = paste0("Nitrate_violations_", format(Sys.Date(), "%Y%m%d"), ".csv"))
 
 # Uranium (Combined)
-Uranium <- filter(data_all, contaminant_code == "4006" & pws_type_code == "CWS" & violation_year >= 2006 & violation_year <= 2024)
-write_csv(Uranium, file = paste0("Uranium_violations_", format(Sys.Date(), "%m%d%y"), ".csv"))
+Uranium <- filter(data_all, contaminant_code == "4006" & pws_type_code == "CWS" & year >= 2006 & year <= 2024)
+write_csv(Uranium, file = paste0("Uranium_violations_", format(Sys.Date(), "%Y%m%d"), ".csv"))
 
 # Mercury
-Mercury <- filter(data_all, contaminant_code == "1035" & pws_type_code == "CWS" & violation_year >= 2006 & violation_year <= 2024)
-write_csv(Mercury, file = paste0("Mercury_violations_", format(Sys.Date(), "%m%d%y"), ".csv"))
+Mercury <- filter(data_all, contaminant_code == "1035" & pws_type_code == "CWS" & year >= 2006 & year <= 2024)
+write_csv(Mercury, file = paste0("Mercury_violations_", format(Sys.Date(), "%Y%m%d"), ".csv"))
 
 # Fluoride
-Fluoride <- filter(data_all, contaminant_code == "1025" & pws_type_code == "CWS" & violation_year >= 2006 & violation_year <= 2024)
-write_csv(Fluoride, file = paste0("Fluoride_violations_", format(Sys.Date(), "%m%d%y"), ".csv"))
+Fluoride <- filter(data_all, contaminant_code == "1025" & pws_type_code == "CWS" & year >= 2006 & year <= 2024)
+write_csv(Fluoride, file = paste0("Fluoride_violations_", format(Sys.Date(), "%Y%m%d"), ".csv"))
 
 # Total Chromium
-Chromium <- filter(data_all, contaminant_code == "1020" & pws_type_code == "CWS" & violation_year >= 2006 & violation_year <= 2024)
-write_csv(Chromium, file = paste0("Chromium_violations_", format(Sys.Date(), "%m%d%y"), ".csv"))
+Chromium <- filter(data_all, contaminant_code == "1020" & pws_type_code == "CWS" & year >= 2006 & year <= 2024)
+write_csv(Chromium, file = paste0("Chromium_violations_", format(Sys.Date(), "%Y%m%d"), ".csv"))
 
 # Selenium
-Selenium <- filter(data_all, contaminant_code == "1045" & pws_type_code == "CWS" & violation_year >= 2006 & violation_year <= 2024)
-write_csv(Selenium, file = paste0("Selenium_violations_", format(Sys.Date(), "%m%d%y"), ".csv"))
+Selenium <- filter(data_all, contaminant_code == "1045" & pws_type_code == "CWS" & year >= 2006 & year <= 2024)
+write_csv(Selenium, file = paste0("Selenium_violations_", format(Sys.Date(), "%Y%m%d"), ".csv"))
 
 # Cadmium 
-Cadmium <- filter(data_all, contaminant_code == "1015" & pws_type_code == "CWS" & violation_year >= 2006 & violation_year <= 2024)
-write_csv(Cadmium, file = paste0("Cadmium_violations_", format(Sys.Date(), "%m%d%y"), ".csv"))
+Cadmium <- filter(data_all, contaminant_code == "1015" & pws_type_code == "CWS" & year >= 2006 & year <= 2024)
+write_csv(Cadmium, file = paste0("Cadmium_violations_", format(Sys.Date(), "%Y%m%d"), ".csv"))
 
 # Bromide
-Bromide <- filter(data_all, contaminant_code == "1004" & pws_type_code == "CWS" & violation_year >= 2006 & violation_year <= 2024)
-write_csv(Bromide, file = paste0("Bromide_violations_", format(Sys.Date(), "%m%d%y"), ".csv"))
+Bromide <- filter(data_all, contaminant_code == "1004" & pws_type_code == "CWS" & year >= 2006 & year <= 2024)
+write_csv(Bromide, file = paste0("Bromide_violations_", format(Sys.Date(), "%Y%m%d"), ".csv"))
 
 #A full description of violation and contaminant codes can be accessed in the SDWA_REF_CODE_VALUES.csv of https://echo.epa.gov/files/echodownloads/SDWA_latest_downloads.zip ECHO site.
